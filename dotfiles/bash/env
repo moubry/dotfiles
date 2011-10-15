@@ -1,0 +1,4 @@
+export EDITOR=bbedit
+export PATH=~/bin:$PATH
+#PS1="\n\w$ "
+PS1="\n\u:\w \$(vcprompt) \n→ "
