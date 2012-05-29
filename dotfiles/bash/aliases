@@ -1,5 +1,6 @@
 # Easier navigation
 alias ..="cd .."
+alias cddp="cd ~/Dropbox/Projects"
 
 # Directory listing
 alias la="ls -Glah"
@@ -53,6 +54,9 @@ function new-git() {
   git config push.default current
 }
 
+# Markdown
+alias md='/Users/sean/Dropbox/Documents/scripts/Markdown_1.0.1/Markdown.pl'
+
 # Performance
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
@@ -69,6 +73,10 @@ alias flush="dscacheutil -flushcache"
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Tail logs
+alias accesslog="tail /var/log/apache2/access_log"
+alias errorlog="tail /var/log/apache2/error_log"
 
 # Empty the trash
 alias emptytrash="rm -rfv ~/.Trash"
