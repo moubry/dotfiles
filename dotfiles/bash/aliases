@@ -78,8 +78,9 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 alias accesslog="tail /var/log/apache2/access_log"
 alias errorlog="tail /var/log/apache2/error_log"
 
-# Server
+# App-specific cmds
 alias restart="touch tmp/restart.txt"
+alias dbreset="rm db/development.sqlite3 ; rm db/schema.rb ; rake db:migrate ; rake db:seed ; touch tmp/restart.txt"
 
 # Empty the trash
 alias emptytrash="rm -rfv ~/.Trash"
