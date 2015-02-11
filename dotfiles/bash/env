@@ -4,3 +4,4 @@ export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 #PS1="\n\w$ "
 PS1="\n\u:\w \$(vcprompt) \n→ "
 [[ -s "/Users/sean/.rvm/scripts/rvm" ]] && source "/Users/sean/.rvm/scripts/rvm"
+echo "Hostname: $HOSTNAME"
