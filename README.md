@@ -7,5 +7,5 @@ There are many like it, but this one is mine.
 From the command-line:
 
     mkdir -p ~/Projects
-    git clone ~/Projects/dotfiles
+    git clone https://github.com/moubry/dotfiles.git ~/Projects/dotfiles
     source ~/Projects/dotfiles/dotfiles/bashrc
