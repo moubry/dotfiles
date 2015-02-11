@@ -6,6 +6,6 @@ There are many like it, but this one is mine.
 
 From the command-line:
 
-    mkdir ~/Projects
+    mkdir -p ~/Projects
     git clone ~/Projects/dotfiles
     source ~/Projects/dotfiles/dotfiles/bashrc
