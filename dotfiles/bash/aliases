@@ -8,9 +8,6 @@ alias lsd='ls -l | grep "^d"'
 # History
 alias h=history
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; gem update --system; gem update; rbenv rehash'
-
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gb='git branch'
@@ -58,6 +55,19 @@ function new-git() {
 # recursively find file or directory
 function search() {
   find . | grep -i $1
+}
+
+# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+function update() {
+  sudo softwareupdate -i -a
+  brew update
+  brew upgrade
+  brew cleanup
+  npm install npm -g
+  npm update -g
+  gem update --system
+  gem update
+  rbenv rehash
 }
 
 # Performance
