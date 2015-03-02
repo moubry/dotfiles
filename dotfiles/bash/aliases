@@ -57,7 +57,7 @@ function new-git() {
 
 # recursively find file or directory
 function search() {
-  find . -print | grep -i $1
+  find . | grep -i $1
 }
 
 # Performance
