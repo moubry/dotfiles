@@ -52,6 +52,15 @@ function new-git() {
   git config push.default current
 }
 
+# GTFO of whatever you're on
+function eject() {
+  git clean -df
+  git checkout -- .
+  git fetch -ap
+  git checkout master
+  git reset --hard origin/master
+}
+
 # recursively find file or directory
 function search() {
   find . | grep -i $1
