@@ -66,30 +66,6 @@ function search() {
   find . | grep -i $1
 }
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-function update() {
-  sudo softwareupdate -i -a
-  brew update
-  brew upgrade
-  brew cleanup
-  npm install npm -g
-  npm update -g
-  update_gems
-  rbenv rehash
-}
-
-function update_gems() {
-  GEM_LOCATION=$(which gem)
-  if [ GEM_LOCATION == '/usr/bin/gem' ]
-    then
-      echo 'You’re using system Ruby — skipping update of RubyGems.'
-    else
-      echo 'Updating gem — the RubyGems program'
-      gem update --system
-      gem update
-  fi
-}
-
 # Performance
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory

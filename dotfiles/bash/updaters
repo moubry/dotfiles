@@ -1,0 +1,33 @@
+# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+function update() {
+  sudo softwareupdate -i -a
+  update_brew
+  update_npm
+  update_gems
+  rbenv rehash
+}
+
+function update_brew() {
+  brew update
+  brew doctor
+  brew upgrade
+  brew cleanup
+  brew doctor
+}
+
+function update_npm() {
+  npm install npm -g
+  npm update -g
+}
+
+function update_gems() {
+  GEM_LOCATION=$(which gem)
+  if [ GEM_LOCATION == '/usr/bin/gem' ]
+    then
+      echo 'You’re using system Ruby — skipping update of RubyGems.'
+    else
+      echo 'Updating gem — the RubyGems program'
+      gem update --system
+      gem update
+  fi
+}
