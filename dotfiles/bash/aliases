@@ -74,9 +74,20 @@ function update() {
   brew cleanup
   npm install npm -g
   npm update -g
-  gem update --system
-  gem update
+  update_gems
   rbenv rehash
+}
+
+function update_gems() {
+  GEM_LOCATION=$(which gem)
+  if [ GEM_LOCATION == '/usr/bin/gem' ]
+    then
+      echo 'You’re using system Ruby — skipping update of RubyGems.'
+    else
+      echo 'Updating gem — the RubyGems program'
+      gem update --system
+      gem update
+  fi
 }
 
 # Performance
