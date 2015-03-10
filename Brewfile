@@ -10,8 +10,6 @@
 #
 #    $ brew brewdle
 
-tap 'caskroom/cask'
-
 brew 'fasd'
 brew 'git'
 brew 'openssl'
@@ -21,4 +19,10 @@ brew 'ruby-build'
 brew 'ssh-copy-id'
 brew 'tree'
 
+# Homebrew Cask
+# http://caskroom.io
+
+brew 'caskroom/cask/brew-cask'
+
 cask 'google-chrome'
+cask 'coderunner'
