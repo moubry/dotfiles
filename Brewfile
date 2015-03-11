@@ -18,6 +18,7 @@ brew 'rbenv'
 brew 'ruby-build'
 brew 'ssh-copy-id'
 brew 'tree'
+brew 'wget'
 
 # Homebrew Cask
 # http://caskroom.io
