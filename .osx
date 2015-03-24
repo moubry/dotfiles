@@ -128,6 +128,9 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 # defaults write com.apple.dock wvous-bl-corner -int 5
 # defaults write com.apple.dock wvous-bl-modifier -int 0
 
+# Speed up Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
