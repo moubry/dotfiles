@@ -51,3 +51,11 @@ Other things to remember that the `.osx` script doesn't handle for you:
 
 * Terminal > Preferences > Profiles > Keyboard > Use Option as Meta key
 * System Preferences > Trackpad > Check every single box in every section
+* Open DropBox and sign in > Choose folders to sync > Start unchecking everything except:
+  * 1Password
+  * Apps
+  * Public
+  * Temp
+  * TextExpander
+* Wait until all Dropbox files are downloaded (this'll take about 10 minutes)
+* Configure all the software that requires licenses
