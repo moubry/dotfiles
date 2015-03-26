@@ -2,7 +2,7 @@
 
 There are many like it, but this one is mine.
 
-### Usage
+## Usage
 
 From the command-line, clone this project:
 
@@ -41,12 +41,13 @@ Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/master/dot
 
     update
 
-### Configuring OS X
+## Configuring OS X
 
 This command will close a bunch of your apps, including Terminal. So do this at the end:
 
     . ~/Projects/dotfiles/.osx
 
-### Other things to remember
+Other things to remember that the `.osx` script doesn't handle for you:
 
 * Terminal > Preferences > Profiles > Keyboard > Use Option as Meta key
+* System Preferences > Trackpad > Check every single box in every section
