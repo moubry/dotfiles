@@ -31,7 +31,7 @@ Setup the dotfiles:
 
     ~/Projects/dotfiles/bootstrap.sh
 
-You're done!
+##### You’re done!
 
 Check out the new apps you ahve installed:
 
