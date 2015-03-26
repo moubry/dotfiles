@@ -25,6 +25,7 @@ brew 'wget'
 
 brew 'caskroom/cask/brew-cask'
 
+cask 'atom'
 cask 'coderunner'
 cask 'google-chrome'
 cask 'vmware-fusion'
