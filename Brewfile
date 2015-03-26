@@ -25,8 +25,12 @@ brew 'wget'
 
 brew 'caskroom/cask/brew-cask'
 
+cask '1password'
+cask 'alfred'
 cask 'atom'
 cask 'coderunner'
+cask 'dropbox'
 cask 'google-chrome'
+cask 'psequel'
 cask 'vmware-fusion'
 cask 'xscope'
