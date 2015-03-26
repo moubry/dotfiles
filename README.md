@@ -56,4 +56,5 @@ Other things to remember that the `.osx` script doesn't handle for you:
   * Temp
   * TextExpander
 * Wait until all Dropbox files are downloaded (this'll take about 10 minutes)
-* Configure all the software that requires licenses
+* Open 1Password keychain from DropBox
+* Start configuring all the software that requires licenses, getting the licenses from DropBox
