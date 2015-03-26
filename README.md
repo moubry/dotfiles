@@ -2,7 +2,7 @@
 
 There are many like it, but this one is mine.
 
-### Usage
+## Usage
 
 From the command-line, clone this project:
 
@@ -40,3 +40,7 @@ Check out the new apps you have installed:
 Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/master/dotfiles/bash/updaters):
 
     update
+
+### Other things to remember
+
+* Terminal > Preferences > Profiles > Keyboard > Use Option as Meta key
