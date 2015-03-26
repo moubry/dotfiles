@@ -37,6 +37,6 @@ Check out the new apps you have installed:
 
     find ~/Applications -cmin -60
 
-Try one of the cool aliases:
+Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/master/dotfiles/bash/updaters):
 
     update
