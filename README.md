@@ -2,7 +2,7 @@
 
 There are many like it, but this one is mine.
 
-## Usage
+### Usage
 
 From the command-line, clone this project:
 
