@@ -33,7 +33,7 @@ Setup the dotfiles:
 
 ##### You’re done!
 
-Check out the new apps you ahve installed:
+Check out the new apps you have installed:
 
     find ~/Applications -cmin -60
 
