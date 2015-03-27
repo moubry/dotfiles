@@ -57,5 +57,5 @@ Other things to remember that the `.osx` script doesn't handle for you:
   * Temp
   * TextExpander
 * Wait until all Dropbox files are downloaded (this'll take about 10 minutes)
-* Open 1Password keychain from DropBox
+* Open 1Password keychain from DropBox `open ~/Dropbox/1Password/1Password.agilekeychain`
 * Start configuring all the software that requires licenses, getting the licenses from DropBox
