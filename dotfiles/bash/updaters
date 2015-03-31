@@ -9,6 +9,7 @@ function update() {
 
 function update_brew() {
   brew update
+  brew cask update
   brew doctor
   brew upgrade
   brew cleanup
