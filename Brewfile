@@ -37,3 +37,11 @@ cask 'psequel'
 cask 'textexpander'
 cask 'vmware-fusion'
 cask 'xscope'
+
+# Font Casks
+# https://github.com/caskroom/homebrew-fonts
+
+brew tap caskroom/fonts
+
+cask 'font-open-sans'
+cask 'font-source-code-pro'
