@@ -9,6 +9,11 @@
 # 2. Install system dependencies with Brewdler
 #
 #    $ brew brewdle
+#
+# IMPORTANT: Remember to scroll back through the installation
+# log so you can read all the caveats. Otherwise, you might
+# forget to do things like set up the LaunchAgents.
+#
 
 brew 'fasd'
 brew 'git'
