@@ -91,6 +91,9 @@ function curltime() {
   curl -w "@/Users/sean/Projects/dotfiles/curl-format" -o /dev/null -s "$1"
 }
 
+# Memcached
+alias memdump="memcached-tool localhost:11211 dump"
+
 # Tail logs
 alias accesslog="tail /var/log/apache2/access_log"
 alias errorlog="tail /var/log/apache2/error_log"
