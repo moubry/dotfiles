@@ -17,6 +17,7 @@
 
 brew 'fasd'
 brew 'git'
+brew 'graphviz'
 brew 'memcached'
 brew 'openssl'
 brew 'postgresql'
