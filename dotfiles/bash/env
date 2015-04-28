@@ -10,8 +10,12 @@ export NVM_DIR="/Users/sean/.nvm"
 # for ruby
 export RBENV="$HOME/.rbenv/bin"
 eval "$(rbenv init -)"
-
 export PATH=~/bin:$RBENV:$PATH
+
+# for go
+mkdir -p $HOME/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 PS1="\n\u:\w \$(vcprompt) \n→ "
 
