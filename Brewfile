@@ -17,6 +17,7 @@
 
 brew 'fasd'
 brew 'git'
+brew 'go'
 brew 'graphviz'
 brew 'memcached'
 brew 'nmap'
