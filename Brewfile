@@ -38,6 +38,7 @@ brew 'wget'
 brew 'caskroom/cask/brew-cask'
 
 cask '1password'
+cask 'adium'
 cask 'alfred'
 cask 'atom'
 cask 'cheatsheet'
