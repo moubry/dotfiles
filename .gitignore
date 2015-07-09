@@ -16,3 +16,8 @@
 # SublimeText project files
 /*.sublime-project
 *.sublime-workspace
+
+# Project ignores
+# ---------------
+
+dotfiles/bash/secrets
