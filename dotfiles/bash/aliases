@@ -103,3 +103,6 @@ alias emptytrash="rm -rfv ~/.Trash"
 
 # Launch iPhone Simulator
 alias iphone='/usr/bin/open "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app"'
+
+# Open secret environment variables file for editing
+alias secrets='/usr/bin/open "/Users/sean/Projects/dotfiles/dotfiles/bash/secrets"'
