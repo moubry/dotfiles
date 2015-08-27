@@ -1,0 +1,5 @@
+# for bash-completion
+# brew info bash-completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi

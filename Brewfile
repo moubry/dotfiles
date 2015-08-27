@@ -15,6 +15,7 @@
 # forget to do things like set up the LaunchAgents.
 #
 
+brew 'bash-completion'
 brew 'cmake'
 brew 'fasd'
 brew 'git'
