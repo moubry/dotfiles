@@ -86,7 +86,7 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 # Fancy cURL that shows detailed timing information
 # Source: https://josephscott.org/archives/2011/10/timing-details-with-curl/
 # Usage:
-#     $ curltime http://moubry.com
+#     $ curltime "http://moubry.com"
 function curltime() {
   curl -w "@/Users/sean/Projects/dotfiles/curl-format" -o /dev/null -s "$1"
 }
