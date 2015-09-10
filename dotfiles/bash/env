@@ -19,4 +19,4 @@ export PATH=$PATH:$GOPATH/bin
 
 PS1="\n\u:\w \$(vcprompt) \n→ "
 
-echo "Hostname: $HOSTNAME"
+# echo "Hostname: $HOSTNAME"
