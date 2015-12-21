@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Reset the DNS cache in OS X
+# https://support.apple.com/en-us/HT202516
+
+if [ -f "/System/Library/LaunchDaemons/com.apple.mDNSResponder.plist" ]; then
+  echo 'Killing mDNSResponder...'
+  sudo killall -HUP mDNSResponder
+else
+  echo 'Using discoveryutil to flush Discoveryd caches...'
+  sudo discoveryutil mdnsflushcache
+  sudo discoveryutil udnsflushcaches
+fi
+
+echo 'Flushing the Directory Service cache for good measure...'
+sudo dscacheutil -flushcache
+
+echo 'Caches flushed.'
