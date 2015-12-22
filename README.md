@@ -11,7 +11,7 @@ From the command-line, clone this project:
     git clone https://github.com/moubry/dotfiles.git ~/Projects/dotfiles
 
 Install Homebrew:
-    
+
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 Make sure it's working:
@@ -52,6 +52,7 @@ Other things to remember that the `.osx` script doesn't handle for you:
 * Terminal > Preferences > Profiles > Keyboard > Use Option as Meta key
 * Keychain Access > Preferences > Show keychain status in menu bar
 * System Preferences > Trackpad > Check every single box in every section
+* If a desktop or server Mac: System Preferences > Energy Saver > Computer sleep > Never
 * Open DropBox and sign in > Choose folders to sync > Start unchecking everything except:
   * 1Password
   * Temp
