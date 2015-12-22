@@ -36,7 +36,7 @@ brew 'wget'
 # Homebrew Cask
 # http://caskroom.io
 
-brew 'caskroom/cask/brew-cask'
+tap 'caskroom/cask'
 
 cask '1password'
 cask 'adium'
@@ -59,7 +59,7 @@ cask 'xscope'
 # Font Casks
 # https://github.com/caskroom/homebrew-fonts
 
-brew tap caskroom/fonts
+tap 'caskroom/fonts'
 
 cask 'font-open-sans'
 cask 'font-source-code-pro'
