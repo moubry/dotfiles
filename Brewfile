@@ -59,4 +59,5 @@ cask 'xscope'
 tap 'caskroom/fonts'
 
 cask 'font-open-sans'
+cask 'roboto'
 cask 'font-source-code-pro'
