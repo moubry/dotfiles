@@ -25,6 +25,7 @@ Install Brewdler:
 Install system dependencies with Brewdler:
 
     cd ~/Projects/dotfiles
+    export HOMEBREW_CASK_OPTS="--appdir=/Applications"
     brew brewdle
 
 Setup the dotfiles:

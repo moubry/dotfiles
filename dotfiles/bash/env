@@ -1,5 +1,8 @@
 export EDITOR=bbedit
 
+# for homebrew cask
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # for fasd
 eval "$(fasd --init auto)"
 
