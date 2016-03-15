@@ -19,7 +19,7 @@ From the command-line, clone this project:
     mkdir -p ~/Projects
     git clone https://github.com/moubry/dotfiles.git ~/Projects/dotfiles
 
-Install system dependencies with Brewdler:
+Install system dependencies defined in the [Brewfile](https://github.com/moubry/dotfiles/blob/master/Brewfile):
 
     cd ~/Projects/dotfiles
     brew bundle
