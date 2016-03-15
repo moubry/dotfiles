@@ -4,29 +4,25 @@ There are many like it, but this one is mine.
 
 ## Usage
 
-From the command-line, clone this project:
-
-    mkdir -p ~/Projects
-    xcode-select --install
-    git clone https://github.com/moubry/dotfiles.git ~/Projects/dotfiles
-
 Install Homebrew:
 
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-Make sure it's working:
+This will automatically prompt you to install the Xcode Command Line Tools. Install these then go back to Terminal and resume the Homebrew installation.
+
+Make sure it’s working:
 
     brew doctor
 
-Install Brewdler:
+From the command-line, clone this project:
 
-    brew tap Homebrew/brewdler
+    mkdir -p ~/Projects
+    git clone https://github.com/moubry/dotfiles.git ~/Projects/dotfiles
 
 Install system dependencies with Brewdler:
 
     cd ~/Projects/dotfiles
-    export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-    brew brewdle
+    brew bundle
 
 Setup the dotfiles:
 
