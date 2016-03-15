@@ -1,19 +1,17 @@
 # Brewfile
 # A list of the developer machine's dependencies from Homebrew
-# https://github.com/Homebrew/homebrew-brewdler
+# https://github.com/Homebrew/homebrew-bundle
 #
-# 1. Install Brewdler (one time)
+# Usage:
 #
-#    $ brew tap Homebrew/brewdler
-#
-# 2. Install system dependencies with Brewdler
-#
-#    $ brew brewdle
+#    $ brew bundle
 #
 # IMPORTANT: Remember to scroll back through the installation
 # log so you can read all the caveats. Otherwise, you might
 # forget to do things like set up the LaunchAgents.
 #
+
+cask_args appdir: '/Applications'
 
 brew 'bash-completion'
 brew 'cmake'
