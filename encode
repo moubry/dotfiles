@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Input for this script is a path to a MOV file.
+# Script will use ffmpeg (x264) to compress it.
+# http://video.stackexchange.com/questions/18147/techniques-for-compressing-a-slideshow-presentation-video
+
+originalmovie=$(basename "$1")
+ext="${originalmovie##*.}"
+base="${originalmovie%.*}"
+dir=$(dirname "$1")
+
+ffmpeg -i $1 -c:v libx264 -crf 23 ${dir}/${base}-lg.${ext}
