@@ -1,0 +1,4 @@
+#!/bin/bash
+
+osascript '/Users/sean/Projects/dotfiles/clear-screen.AppleScript'
+osascript '/Users/sean/Projects/dotfiles/orgmode.AppleScript'
