@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'dalli'
+
+memcached = Dalli::Client.new
+memcached.flush
