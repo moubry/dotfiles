@@ -51,6 +51,7 @@ cask 'sketch'
 cask 'sourcetree'
 cask 'textexpander'
 cask 'vmware-fusion'
+cask 'wireshark'
 cask 'xscope'
 
 # Font Casks
