@@ -1,5 +1,8 @@
 export EDITOR=bbedit
 
+# for homebrew's sbin folder
+export PATH=/usr/local/sbin:$PATH
+
 # for homebrew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
