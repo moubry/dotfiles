@@ -16,7 +16,6 @@ function update_brew() {
   brew update # Run brew update twice because that's what Homebrew says to do:
   brew update # https://github.com/Homebrew/brew/blob/master/docs/README.md#troubleshooting
   brew cleanup
-  brew cask update
   brew cask cleanup
   brew doctor
   brew cask doctor
