@@ -19,7 +19,7 @@ function update_brew() {
   brew cask cleanup
   brew doctor
   brew cask doctor
-  brew upgrade --all
+  brew upgrade
   brew cleanup
   brew doctor
 }
