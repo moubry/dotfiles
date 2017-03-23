@@ -1,9 +1,7 @@
 export EDITOR=bbedit
 
-# for homebrew's sbin folder
+# for homebrew
 export PATH=/usr/local/sbin:$PATH
-
-# for homebrew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # for fasd
@@ -16,12 +14,15 @@ export NVM_DIR="/Users/sean/.nvm"
 # for ruby
 export RBENV="$HOME/.rbenv/bin"
 eval "$(rbenv init -)"
-export PATH=~/bin:$RBENV:$PATH
+export PATH=$RBENV:$PATH
 
 # for go
 mkdir -p $HOME/go/bin
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$GOPATH/bin:$PATH
+
+# for dotfiles
+export PATH=~/bin:$PATH
 
 PS1="\n\u:\w \$(vcprompt) \n→ "
 
