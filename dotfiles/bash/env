@@ -16,6 +16,11 @@ export RBENV="$HOME/.rbenv/bin"
 eval "$(rbenv init -)"
 export PATH=$RBENV:$PATH
 
+# for python
+export PYENV="$HOME/.pyenv/bin"
+eval "$(pyenv init -)"
+export PATH=$PYENV:$PATH
+
 # for go
 mkdir -p $HOME/go/bin
 export GOPATH=$HOME/go
