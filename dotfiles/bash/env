@@ -19,6 +19,7 @@ export PATH=$RBENV:$PATH
 # for python
 export PYENV="$HOME/.pyenv/bin"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 export PATH=$PYENV:$PATH
 
 # for go
