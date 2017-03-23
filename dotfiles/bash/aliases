@@ -110,3 +110,6 @@ alias secrets='/usr/bin/open "/Users/sean/Projects/dotfiles/dotfiles/bash/secret
 function pman {
   man -t "${1}" | open -f -a /Applications/Preview.app/
 }
+
+# Output the directories in the path on new lines
+alias path='echo $PATH | tr ":" "\n"'
