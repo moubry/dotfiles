@@ -29,9 +29,15 @@ alias gr='git remote -v'
 alias gst='git status'
 alias gt='git status'
 alias g='git status'
+
 # Git clone from GitHub
 function gch() {
   git clone git://github.com/$USER/$1.git
+}
+
+# Search Git commit diffs across all branches
+function gs() {
+  git log --branches -S $1
 }
 
 # Setup a tracking branch from [remote] [branch_name]
