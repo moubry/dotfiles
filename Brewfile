@@ -62,3 +62,9 @@ tap 'caskroom/fonts'
 cask 'font-open-sans'
 cask 'roboto'
 cask 'font-source-code-pro'
+
+# Science Casks
+# https://github.com/Homebrew/homebrew-science
+
+tap 'homebrew/science'
+
