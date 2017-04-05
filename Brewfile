@@ -22,6 +22,7 @@ brew 'graphviz'
 brew 'hugo'
 brew 'icu4c'
 brew 'memcached'
+brew 'ncdu'
 brew 'nmap'
 brew 'openssl'
 brew 'postgresql'
@@ -67,4 +68,3 @@ cask 'font-source-code-pro'
 # https://github.com/Homebrew/homebrew-science
 
 tap 'homebrew/science'
-
