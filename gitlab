@@ -5,15 +5,19 @@ require 'uri'
 
 @logger = Logger.new(STDOUT)
 
-unless system('git rev-parse --is-inside-work-tree')
+unless system('git rev-parse --is-inside-work-tree > /dev/null')
   @logger.error 'Not a Git repository.'
   exit
 end
 
-origin_remote_url = %x( git config --get remote.origin.url ).strip
+if (commit_hash = ARGV[0])
+  @logger.debug "Commit hash:  #{commit_hash}"
+end
+
+origin_remote_url = `git config --get remote.origin.url`.strip
 @logger.debug "Remote URL:   #{origin_remote_url}"
 
-website_url  = origin_remote_url.match('^git@(.*):')[1]
+website_url = origin_remote_url.match('^git@(.*):')[1]
 @logger.debug "GitLab host:  #{website_url}"
 
 account_name = origin_remote_url.match(':(.*)\/')[1]
@@ -22,12 +26,12 @@ account_name = origin_remote_url.match(':(.*)\/')[1]
 project_name = origin_remote_url.match('\/(.*).git$')[1]
 @logger.debug "Project name: #{project_name}"
 
-branch_name = %x( git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3 ).strip
+branch_name = `git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`.strip
 @logger.debug "Branch name:  #{branch_name}"
 
-project_url = URI::join "https://#{website_url}",
-                        "/#{account_name}/",
-                        "#{project_name}"
+project_url = URI.join "https://#{website_url}",
+                       "/#{account_name}/",
+                       project_name.to_s
 
 @logger.debug "Project URL:  #{project_url}"
 
