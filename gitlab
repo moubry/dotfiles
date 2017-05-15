@@ -1,5 +1,30 @@
 #!/usr/bin/env ruby
 
+###
+# When you run this command-line program `gitlab` from inside a Git
+# repository that is hosted on GitLab, then it will open your web browser to
+# various GitLab URLs depending your context.
+#
+# For example, let's say you have a project named `stid/gps-api`, and you've
+# checked out master, and execute `gitlab`, then your browser will open to the
+# root of that project:
+#
+#   $ git checkout master
+#   $ gitlab
+#     ^ Opens: https://gitlab.sd.apple.com/stid/gps-api
+#
+# However, if you've checked out a specific branch, then it'll take you straight
+# to that branch:
+#
+#   $ git checkout system-status-page
+#   $ gitlab
+#     ^ Opens: https://gitlab.sd.apple.com/stid/gps-api/tree/system-status-page
+#
+# And, if you pass-in a commit hash as an argument, it'll open to that commit:
+#
+#   $ gitlab 93f7afb7
+#     ^ Opens: https://gitlab.sd.apple.com/stid/gps-api/commit/93f7afb7
+
 require 'logger'
 require 'uri'
 
