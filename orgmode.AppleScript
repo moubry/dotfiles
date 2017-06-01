@@ -38,15 +38,15 @@ on menu_click_recurse(mList, parentObject)
 end menu_click_recurse
 
 tell application "Atom"
-	open "/Users/Sean/Projects/worklog"
-	open "/Users/Sean/Documents/Organization"
+	open "/Users/sean/Box Sync/Organization"
+	open "/Users/sean/Box Sync/Organization/Worklog"
 end tell
 
 tell application "Radar" to activate
 delay 3
 menu_click({"Radar", "Favorites", "(STID) GPS Tools | Todo List"})
 
-do shell script "open '/Users/sean/Documents/Organization'"
+do shell script "open '/Users/sean/Box Sync/Organization/Worklog'"
 do shell script "open '/Applications/TogglDesktop.app'"
 
 delay 2
