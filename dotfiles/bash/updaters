@@ -41,6 +41,8 @@ function update_gems() {
     else
       echo 'Updating gem — the RubyGems program'
       gem update --system
+
+      echo 'Updating all gems'
       gem update
   fi
 }
