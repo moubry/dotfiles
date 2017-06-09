@@ -26,7 +26,10 @@ function update_brew() {
 }
 
 function update_npm() {
-  npm install npm -g
+  echo 'Updating NPM'
+  npm install -g npm # Update NPM
+
+  echo 'Updating all globally installed packages'
   npm update -g
 }
 
