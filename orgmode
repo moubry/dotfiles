@@ -1,4 +1,5 @@
 #!/bin/bash
 
+AppleConnect network --action=connect --noninteractive --service=vpn
 osascript '/Users/sean/Projects/dotfiles/clear-screen.AppleScript'
 osascript '/Users/sean/Projects/dotfiles/orgmode.AppleScript'
