@@ -1,3 +1,15 @@
+-- orgmode.AppleScript arranges the windows of all the Applications I use on a
+-- daily basis across two spaces: Comms Desktop and Orgmode Desktop. This script
+-- assumes that you we are logged into the network and have completely opened
+-- all of the Applications that it depends on.
+--
+-- This script also assumes that you've bound the apps to their relevant desktop
+-- via https://www.lifewire.com/assign-mac-apps-to-open-in-specific-desktop-space-2260812
+--
+-- These `go_to_comms_desktop` and `go_to_orgmode_desktop` functions assume you
+-- have turned on Control+N as a shortcut for Mission Control in System Preferences
+-- via https://stackoverflow.com/questions/43444636/applescript-to-change-osx-desktop-spaces-not-working
+
 on go_to_comms_desktop()
 	tell application "System Events"
 		-- Key code 18 is the "1" key
