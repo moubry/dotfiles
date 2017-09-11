@@ -1,9 +1,24 @@
+on go_to_comms_desktop()
+	tell application "System Events"
+		-- Key code 18 is the "1" key
+		-- via http://eastmanreference.com/complete-list-of-applescript-key-codes/
+		key code 18 using control down
+	end tell
+end go_to_comms_desktop
+
+on go_to_orgmode_desktop()
+	tell application "System Events"
+		-- Key code 19 is the "2" key
+		-- via http://eastmanreference.com/complete-list-of-applescript-key-codes/
+		key code 19 using control down
+	end tell
+end go_to_orgmode_desktop
+
 -- `menu_click`, by Jacob Rus, September 2006
 --
 -- Accepts a list of form: `{"Finder", "View", "Arrange By", "Date"}`
 -- Execute the specified menu item.  In this case, assuming the Finder
 -- is the active application, arranging the frontmost folder by date.
-
 on menu_click(mList)
 	local appName, topMenu, r
 
@@ -36,17 +51,18 @@ on menu_click_recurse(mList, parentObject)
 	end tell
 end menu_click_recurse
 
+go_to_orgmode_desktop()
+
 tell application "Atom"
 	open "/Users/sean/Box Sync/Organization"
 	open "/Users/sean/Box Sync/Organization/Worklog"
 end tell
 
 tell application "Radar" to activate
-delay 3
+delay 3 -- Give Radar time to log in
 menu_click({"Radar", "Favorites", "(STID) GPS Tools | Todo List"})
 
 do shell script "open '/Users/sean/Box Sync/Organization/Worklog'"
-do shell script "open '/Applications/TogglDesktop.app'"
 
 delay 2
 
@@ -54,5 +70,14 @@ tell application "Moom"
 	arrange windows according to snapshot named "Orgmode"
 end tell
 
-tell application "TogglDesktop" to activate
-tell application "TogglDesktop" to activate
+delay 2
+
+go_to_comms_desktop()
+
+tell application "Moom"
+	arrange windows according to snapshot named "Comms"
+end tell
+
+delay 2
+
+go_to_orgmode_desktop()
