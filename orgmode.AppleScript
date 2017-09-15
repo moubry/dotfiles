@@ -26,6 +26,15 @@ on go_to_orgmode_desktop()
 	end tell
 end go_to_orgmode_desktop
 
+on open_new_safari_window()
+	tell application "System Events"
+		tell process "Safari"
+			click menu item "New Window" of menu "File" of menu bar 1
+		end tell
+	end tell
+	tell application "Safari" to activate
+end open_new_safari_window
+
 -- `menu_click`, by Jacob Rus, September 2006
 --
 -- Accepts a list of form: `{"Finder", "View", "Arrange By", "Date"}`
@@ -70,8 +79,12 @@ tell application "Atom"
 	open "/Users/sean/Box Sync/Organization/Worklog"
 end tell
 
+open_new_safari_window()
+
 tell application "Radar" to activate
+
 delay 3 -- Give Radar time to log in
+
 menu_click({"Radar", "Favorites", "(STID) GPS Tools | Todo List"})
 
 do shell script "open '/Users/sean/Box Sync/Organization/Worklog'"
@@ -85,6 +98,10 @@ end tell
 delay 2
 
 go_to_comms_desktop()
+
+open_new_safari_window()
+
+delay 1
 
 tell application "Moom"
 	arrange windows according to snapshot named "Comms"
