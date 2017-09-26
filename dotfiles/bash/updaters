@@ -4,6 +4,7 @@ function update() {
   sudo softwareupdate -i -a
 
   update_brew
+  update_nvm
   update_npm
   update_gems
   rbenv rehash
@@ -23,6 +24,16 @@ function update_brew() {
   brew upgrade
   brew cleanup
   brew doctor
+}
+
+function update_nvm() {
+  echo 'Updating NVM'
+
+  echo 'Getting latest version of NVM'
+  latest=$(curl --silent https://github.com/creationix/nvm/releases/latest --stderr - | egrep -o "([0-9]{1,}\.)+[0-9]{1,}")
+
+  echo 'Re-installing NVM'
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v$latest/install.sh | PROFILE=$HOME/Projects/dotfiles/dotfiles/bash/env bash
 }
 
 function update_npm() {
