@@ -5,3 +5,6 @@
 
 ln -s ~/Projects/dotfiles ~/bin
 echo 'source ~/Projects/dotfiles/dotfiles/bashrc' >> ~/.bash_profile
+
+# Sync preferences and packages for across machines
+ln -s ~/Dropbox/Apps/Atom ~/.atom
