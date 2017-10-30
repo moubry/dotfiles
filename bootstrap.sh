@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 
-# Creation of symlink will fail if ~/bin already exists.
-# So you'll need to do a `rm -rf ~/bin`
+# First, verify assumptions about current state of the system are true. This
+# script should not run on a system that has already been bootstrapped. However,
+# if you're switching to these dotfiles after having already installed Atom,
+# then bootstrapping is a destructive action, so handle this manually.
+
+if [ -d ~/bin ]; then
+  echo "ERROR: ~/bin already exists, so you’ll need to delete it, then re-run."
+  exit 1
+fi
+
+if [ -d ~/.atom ]; then
+  echo "ERROR: ~/.atom already exists, so you’ll need to delete it, then re-run."
+  exit 1
+fi
 
 ln -s ~/Projects/dotfiles ~/bin
 echo 'source ~/Projects/dotfiles/dotfiles/bashrc' >> ~/.bash_profile
