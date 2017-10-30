@@ -44,7 +44,7 @@ cask 'atom'
 cask 'cheatsheet'
 cask 'coderunner'
 cask 'dropbox'
-cask 'github-desktop'
+cask 'github'
 cask 'google-chrome'
 cask 'mindnode-pro'
 cask 'psequel'
@@ -60,7 +60,7 @@ cask 'xscope'
 tap 'caskroom/fonts'
 
 cask 'font-open-sans'
-cask 'roboto'
+cask 'font-roboto'
 cask 'font-source-code-pro'
 
 # Science Casks
