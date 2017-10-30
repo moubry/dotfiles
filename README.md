@@ -24,6 +24,12 @@ Install system dependencies defined in the [Brewfile](https://github.com/moubry/
     cd ~/Projects/dotfiles
     brew bundle
 
+Install system dependencies defined in the [Masfile](https://github.com/moubry/dotfiles/blob/master/Masfile):
+
+    ~/Projects/dotfiles/Masfile
+
+This will probably open the Mac App Store and prompt you to log in with your Apple ID.
+
 Setup the dotfiles:
 
     ~/Projects/dotfiles/bootstrap.sh
