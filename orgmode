@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Connect to VPN
+# If you want to automatically connect to SecureWiFi as well as VPN then use the
+# flag: `--service=secure-wifi` as well.
 AppleConnect network --action=connect --noninteractive --service=vpn
 
 # Hide all opens apps
