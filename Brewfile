@@ -40,6 +40,7 @@ brew 'wget'
 tap 'caskroom/cask'
 
 cask '1password'
+cask 'aerial'
 cask 'alfred'
 cask 'atom'
 cask 'cheatsheet'
