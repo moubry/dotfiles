@@ -33,6 +33,7 @@ brew 'redis'
 brew 'rbenv'
 brew 'ruby-build'
 brew 'ssh-copy-id'
+brew 'terminal-notifier'
 brew 'tree'
 brew 'wget'
 
