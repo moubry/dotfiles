@@ -7,6 +7,11 @@
 # If you happen to capture a video without an even number of pixels in either
 # dimension, then you might need to add a crop filter like this:
 #     -filter:v "crop=4634:1990:0:0"
+#
+# One you add the path to this script in your shell profile, you use it like this:
+#   encode demo.mov
+#
+# And it will create a new file called `demo-lg.mov`.
 
 originalmovie=$(basename "$1")
 ext="${originalmovie##*.}"
