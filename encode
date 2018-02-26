@@ -4,14 +4,17 @@
 # Script will use ffmpeg (x264) to compress it.
 # http://video.stackexchange.com/questions/18147/techniques-for-compressing-a-slideshow-presentation-video
 #
+# One you add the path to this script in your shell profile, you use it like this:
+#     $ encode demo.mov
+#
+# And it will create a new file called `demo-lg.mov`.
+#
 # If you happen to capture a video without an even number of pixels in either
 # dimension, then you might need to add a crop filter like this:
 #     -filter:v "crop=4634:1990:0:0"
 #
-# One you add the path to this script in your shell profile, you use it like this:
-#   encode demo.mov
-#
-# And it will create a new file called `demo-lg.mov`.
+# How to use the crop filter:
+# https://video.stackexchange.com/questions/4563/how-can-i-crop-a-video-with-ffmpeg
 
 originalmovie=$(basename "$1")
 ext="${originalmovie##*.}"
