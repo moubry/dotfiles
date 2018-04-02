@@ -14,6 +14,7 @@
 cask_args appdir: '/Applications'
 
 brew 'bash-completion'
+brew 'carthage'
 brew 'cmake'
 brew 'fasd'
 brew 'ffmpeg'
