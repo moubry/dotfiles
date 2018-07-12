@@ -23,9 +23,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PATH=$PYENV:$PATH
 
-# for anaconda
-export PATH="/Users/sean/anaconda/bin:$PATH"
-
 # for go
 mkdir -p $HOME/go/bin
 export GOPATH=$HOME/go
