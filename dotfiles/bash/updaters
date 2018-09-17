@@ -18,7 +18,6 @@ function update_brew() {
   brew update # https://github.com/Homebrew/brew/blob/master/docs/README.md#troubleshooting
   brew prune
   brew cleanup
-  brew cask cleanup
   brew doctor
   brew cask doctor
   brew upgrade
