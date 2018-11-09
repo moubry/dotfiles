@@ -121,9 +121,9 @@ function pman {
 # Output the directories in the path on new lines
 alias path='echo $PATH | tr ":" "\n"'
 
-function enable-dark-mode() {
-  defaults write "${1}/Contents/Info.plist" NSRequiresAquaSystemAppearance false
+function enable_dark_mode() {
+  defaults write "/Applications/${1}.app/Contents/Info.plist" NSRequiresAquaSystemAppearance false
 }
-function disable-dark-mode() {
-  defaults delete "${1}/Contents/Info.plist" NSRequiresAquaSystemAppearance
+function disable_dark_mode() {
+  defaults delete "/Applications/${1}.app/Contents/Info.plist" NSRequiresAquaSystemAppearance
 }
