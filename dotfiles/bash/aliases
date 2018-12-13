@@ -95,6 +95,9 @@ function curltime() {
   curl -w "@/Users/sean/Projects/dotfiles/curl-format" -o /dev/null -s "$1"
 }
 
+# Open Chrome using all the known flags for turning off security, CORS, etc.
+alias badchrome="open -a Google\ Chrome --args --disable-web-security --user-data-dir --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure --allow-file-access-from-files"
+
 # Memcached
 alias memdump="memcached-tool localhost:11211 dump"
 
