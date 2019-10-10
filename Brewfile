@@ -10,6 +10,8 @@
 # log so you can read all the caveats. Otherwise, you might
 # forget to do things like set up the LaunchAgents.
 #
+# Installs mas-cli (https://github.com/mas-cli/mas) which Brew Bundle will use
+# to install dependencies from the Mac App Store.
 
 cask_args appdir: '/Applications'
 
@@ -48,13 +50,25 @@ brew 'tree'
 brew 'wget'
 brew 'yamllint'
 
+# Mac App Store
+
+mas '1Password 7', id: 1333542190
+mas 'Cascadea', id: 1432182561
+mas 'Keynote', id: 409183694
+mas 'Neptunes', id: 1006739057
+mas 'Numbers', id: 409203825
+mas 'Pages', id: 409201541
+mas 'Sim Daltonism', id: 693112260
+mas 'Taurine', id: 960276676
+mas 'Tweetbot 3', id: 1384080005
+mas 'Twitterrific', id: 1289378661
+
 # Homebrew Cask
 # http://caskroom.io
 #
 # Read https://github.com/Homebrew/homebrew-cask/issues/58046 if you ever see:
 # Error: Cask 'wireshark' definition is invalid: invalid 'depends_on macos' value: ">= :mountain_lion"
 
-cask '1password'
 cask 'aerial'
 cask 'alfred'
 cask 'atom'
