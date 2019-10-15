@@ -4,6 +4,7 @@ function update() {
   sudo softwareupdate -i -a
 
   update_brew
+  update_python
   update_nvm
   update_npm
   update_gems
@@ -23,6 +24,12 @@ function update_brew() {
   brew cask upgrade
   brew cleanup
   brew doctor
+}
+
+function update_python() {
+  echo 'Updating Python'
+
+  pip install --upgrade pip
 }
 
 function update_nvm() {
