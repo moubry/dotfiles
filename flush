@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Reset the DNS cache in OS X
+# Reset the DNS cache on macOS
 # https://support.apple.com/en-us/HT202516
 
 if [ -f "/System/Library/LaunchDaemons/com.apple.mDNSResponder.plist" ]; then

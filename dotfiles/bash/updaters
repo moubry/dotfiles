@@ -1,6 +1,6 @@
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 function update() {
-  echo 'OS X’s system software update tool will ask for your password...'
+  echo 'Software Update (macOS’s system software update tool) will ask for your password...'
   sudo softwareupdate -i -a
 
   update_brew

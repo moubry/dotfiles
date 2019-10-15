@@ -44,7 +44,7 @@ Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/master/dot
 
     update
 
-## Configuring OS X
+## Configuring macOS
 
 This command will close a bunch of your apps, including Terminal. So do this at the end:
 
