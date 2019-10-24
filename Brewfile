@@ -49,6 +49,7 @@ brew 'terminal-notifier'
 brew 'tree'
 brew 'wget'
 brew 'yamllint'
+brew 'zsh-completions'
 
 # Mac App Store
 

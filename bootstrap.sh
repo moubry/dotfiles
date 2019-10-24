@@ -16,7 +16,7 @@ if [ -d ~/.atom ]; then
 fi
 
 ln -s ~/Projects/dotfiles ~/bin
-echo 'source ~/Projects/dotfiles/dotfiles/bashrc' >> ~/.bash_profile
+echo 'source ~/Projects/dotfiles/dotfiles/zshrc' >> ~/.zprofile
 
 # Sync preferences and packages for across machines
 ln -s ~/Dropbox/Apps/Atom ~/.atom
