@@ -53,6 +53,7 @@ brew 'yamllint'
 # Mac App Store
 
 mas '1Password 7', id: 1333542190
+mas 'Apple Remote Desktop', id: 409907375
 mas 'Cascadea', id: 1432182561
 mas 'Keynote', id: 409183694
 mas 'Neptunes', id: 1006739057
