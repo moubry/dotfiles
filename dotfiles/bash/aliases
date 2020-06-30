@@ -128,3 +128,13 @@ function enable_dark_mode() {
 function disable_dark_mode() {
   defaults delete "/Applications/${1}.app/Contents/Info.plist" NSRequiresAquaSystemAppearance
 }
+
+function hide_desktop() {
+  defaults write com.apple.finder CreateDesktop false
+  killall Finder
+}
+
+function show_desktop() {
+  defaults write com.apple.finder CreateDesktop true
+  killall Finder
+}
