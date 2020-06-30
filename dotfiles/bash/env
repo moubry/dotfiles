@@ -4,6 +4,10 @@ export EDITOR=bbedit
 export PATH=/usr/local/sbin:$PATH
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# for GNU versions of tools (coreutils and sed)
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
 # for fasd
 eval "$(fasd --init auto)"
 
