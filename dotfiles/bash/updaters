@@ -7,6 +7,7 @@ function update() {
   update_python
   update_nvm
   update_npm
+  update_node
   update_gems
   rbenv rehash
 
@@ -48,6 +49,11 @@ function update_npm() {
 
   echo 'Updating all globally installed packages'
   npm update -g
+}
+
+function update_node() {
+  nvm install --lts
+  nvm use --lts
 }
 
 function update_gems() {
