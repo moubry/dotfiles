@@ -12,7 +12,7 @@ alias h=history
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gb='git branch'
 alias gba="git branch -a | grep -v 'heroku\|orchard\|production\|uat\|sandbox'"
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'--abbrev-commit --date=relative"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 # Commit pending changes and quote all args as message
