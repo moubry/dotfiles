@@ -3,8 +3,18 @@
 -- assumes that you we are logged into the network and have completely opened
 -- all of the Applications that it depends on.
 --
--- This script also assumes that you've bound the apps to their relevant desktop
+-- This script also assumes that you've assigned the apps to their relevant desktop
 -- via https://www.lifewire.com/assign-mac-apps-to-open-in-specific-desktop-space-2260812
+--
+-- Desktop 1 (Comms Desktop)
+--   • Messages
+--   • Quip
+--   • Slack
+--
+-- Desktop 2 (Orgmode Desktop)
+--   • Radar
+--   • Agile
+--   • TogglDesktop
 --
 -- These `go_to_comms_desktop` and `go_to_orgmode_desktop` functions assume you
 -- have turned on Control+N as a shortcut for Mission Control in System Preferences
@@ -76,7 +86,6 @@ go_to_orgmode_desktop()
 
 tell application "Atom"
 	open "/Users/sean/Box Sync/Organization"
-	open "/Users/sean/Box Sync/Organization/Worklog"
 end tell
 
 open_new_safari_window()
@@ -85,7 +94,7 @@ tell application "Radar" to activate
 
 delay 3 -- Give Radar time to log in
 
-menu_click({"Radar", "Favorites", "(STID) GPS Tools | Todo List"})
+menu_click({"Radar", "Window", "Viewer"})
 
 do shell script "open '/Users/sean/Box Sync/Organization/Worklog'"
 

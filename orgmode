@@ -3,24 +3,27 @@
 # Connect to VPN
 # If you want to automatically connect to SecureWiFi as well as VPN then use the
 # flag: `--service=secure-wifi` as well.
+AppleConnect authenticate --account smoubry --password-file $AC_PASSWORD_PATH
 AppleConnect network --action=connect --noninteractive --service=vpn
 
 # Hide all opens apps
 osascript '/Users/sean/Projects/dotfiles/clear-screen.AppleScript'
 
 # Open all my daily use Applications
-open '/Applications/1Password 6.app'
-open '/Applications/Apple Chat.app'
+open '/Applications/1Password 7.app'
+open '/Applications/Agile.app'
 open '/Applications/Apple Directory.app'
 open '/Applications/Atom.app'
-open '/Applications/Calendar.app'
-open '/Applications/iTunes.app'
-open '/Applications/Mail.app'
-open '/Applications/Messages.app'
 open '/Applications/NepTunes.app'
 open '/Applications/Quip.app'
 open '/Applications/Radar.app'
+open '/Applications/Things3.app'
 open '/Applications/TogglDesktop.app'
+open '/System/Applications/Calendar.app'
+open '/System/Applications/Mail.app'
+open '/System/Applications/Messages.app'
+open '/System/Applications/Music.app'
+open '/System/Applications/Safari.app'
 
 # Arrange the windows
 osascript '/Users/sean/Projects/dotfiles/orgmode.AppleScript'
