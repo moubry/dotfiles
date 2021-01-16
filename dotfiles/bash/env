@@ -39,6 +39,6 @@ export PATH=$HBASE_HOME:$PATH
 # for dotfiles
 export PATH=~/bin:$PATH
 
-PS1="\n\u:\w \$(vcprompt) \n→ "
+PS1="\n\u:\w \$(vcprompt) \n$ "
 
 # echo "Hostname: $HOSTNAME"
