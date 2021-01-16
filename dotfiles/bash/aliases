@@ -68,6 +68,21 @@ function eject() {
   git reset --hard origin/main
 }
 
+# Kube
+alias kpods='kubectl get pods'
+alias ksecrets='kubectl get secrets'
+
+# Kube - Grab the first pod in the current namespace and shell into it.
+function kbash() {
+  container=$(kubectl get pods | sed '1d' | awk '{print $1}' | head -n 1)
+  kubectl exec --stdin --tty $container -- /bin/bash
+}
+
+# Kube - Print out the value of a secret.
+function ksecret() {
+  kubectl get secret $1 -o jsonpath="{.data.$1}" | base64 -d
+}
+
 # recursively find file or directory
 function search() {
   find . | grep -i $1
