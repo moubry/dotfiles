@@ -6,10 +6,10 @@
 # various GitLab URLs depending your context.
 #
 # For example, let's say you have a project named `stid/gps-api`, and you've
-# checked out master, and execute `gitlab`, then your browser will open to the
+# checked out main, and execute `gitlab`, then your browser will open to the
 # root of that project:
 #
-#   $ git checkout master
+#   $ git checkout main
 #   $ gitlab
 #     ^ Opens: https://gitlab.sd.apple.com/stid/gps-api
 #
@@ -65,7 +65,7 @@ url_to_open = project_url
 if commit_hash
   url_to_open = URI.join("#{project_url}/", "commit/#{commit_hash}")
   @logger.debug "Commit URL:   #{url_to_open}"
-elsif branch_name && branch_name != 'master'
+elsif branch_name && branch_name != 'main'
   url_to_open = URI.join("#{project_url}/", "tree/#{branch_name}")
   @logger.debug "Branch URL:   #{url_to_open}"
 end

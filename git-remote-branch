@@ -5,11 +5,11 @@
 #
 # See also http://github.com/webmat/git_remote_branch/tree/master
 #
-# This script allows you to easilly create and destroy local and remote 
+# This script allows you to easilly create and destroy local and remote
 # branches at the same time.
 #
-# git-remote-branch create: creates a remote branch from the current branch, 
-#      creates a local tracking branch with the same name and switch to it 
+# git-remote-branch create: creates a remote branch from the current branch,
+#      creates a local tracking branch with the same name and switch to it
 #      (ie: checkout).
 #
 # git-remote-branch delete: deletes the remote branch then deletes the local
@@ -54,7 +54,7 @@ end
 def delete_branch(branch_name, origin, current_branch)
   cmd = []
   cmd << "git push #{origin} :refs/heads/#{branch_name}"
-  cmd << "git checkout master" if current_branch == branch_name
+  cmd << "git checkout main" if current_branch == branch_name
   cmd << "git branch -d #{branch_name}"
   execute_cmd(cmd)
 end
@@ -81,7 +81,7 @@ def get_branch
 end
 
 def get_origin
-  return ARGV[2] if ARGV.size > 2 
+  return ARGV[2] if ARGV.size > 2
   return "origin"
 end
 

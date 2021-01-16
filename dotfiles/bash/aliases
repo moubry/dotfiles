@@ -21,10 +21,10 @@ function gg() {
 }
 alias gco='git checkout'
 alias gd='git diff'
-alias gdm='git diff master'
+alias gdm='git diff main'
 alias gnp="git-notpushed"
 alias gp='git push'
-alias gpom='git push -u origin master'
+alias gpom='git push -u origin main'
 alias gr='git remote -v'
 alias gst='git status'
 alias gt='git status'
@@ -53,9 +53,9 @@ function grf() {
 function new-git() {
   ssh git@example.com "mkdir $1.git && cd $1.git && git --bare init"
   git remote add origin git@example.com:$1.git
-  git push origin master
-  git config branch.master.remote origin
-  git config branch.master.merge refs/heads/master
+  git push origin main
+  git config branch.main.remote origin
+  git config branch.main.merge refs/heads/main
   git config push.default current
 }
 
@@ -64,8 +64,8 @@ function eject() {
   git clean -df
   git checkout -- .
   git fetch -ap
-  git checkout master
-  git reset --hard origin/master
+  git checkout main
+  git reset --hard origin/main
 }
 
 # recursively find file or directory
