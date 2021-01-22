@@ -6,6 +6,7 @@
 if [ -f "/System/Library/LaunchDaemons/com.apple.mDNSResponder.plist" ]; then
   echo 'Killing mDNSResponder...'
   sudo killall -HUP mDNSResponder
+  sudo killall mDNSResponderHelper
 else
   echo 'Using discoveryutil to flush Discoveryd caches...'
   sudo discoveryutil mdnsflushcache
