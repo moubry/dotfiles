@@ -68,6 +68,14 @@ function eject() {
   git reset --hard origin/main
 }
 
+# Deploy a feature branch to an environment branch on a team that uses GitOps.
+function release() {
+  gl origin/$2 | head
+  git push --force origin $1:$2
+  gl origin/$2 | head
+  bin/rio
+}
+
 # Kube
 alias kpods='kubectl get pods'
 alias ksecrets='kubectl get secrets'
@@ -81,6 +89,18 @@ function kbash() {
 # Kube - Print out the value of a secret.
 function ksecret() {
   kubectl get secret $1 -o jsonpath="{.data.$1}" | base64 -d
+}
+
+# Kube - Set a secret.
+function kcreatesecret() {
+  kubectl delete secret $1
+  kubectl create secret generic $1 --from-literal=$1="$2"
+}
+
+# Kube - Shell into a running pod.
+# https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/
+function kssh() {
+  kubectl exec --stdin --tty $1 -- /bin/bash
 }
 
 # recursively find file or directory
