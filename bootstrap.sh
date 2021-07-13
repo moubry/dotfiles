@@ -15,8 +15,12 @@ if [ -d ~/.atom ]; then
   exit 1
 fi
 
-ln -s ~/Projects/dotfiles ~/bin
-echo 'source ~/Projects/dotfiles/dotfiles/zshrc' >> ~/.zprofile
+# Create an empty secrets file
+touch ~/Projects/dotfiles/zsh/secrets
 
 # Sync preferences and packages for across machines
 ln -s ~/Dropbox/Apps/Atom ~/.atom
+
+# Finally, hook up the .zprofile to our cloned dotfiles
+ln -s ~/Projects/dotfiles ~/bin
+echo 'source ~/Projects/dotfiles/zshrc' >> ~/.zprofile
