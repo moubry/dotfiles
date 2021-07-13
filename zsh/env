@@ -3,6 +3,7 @@ export EDITOR=bbedit
 # for homebrew
 export PATH=/usr/local/sbin:$PATH
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # for GNU versions of tools (coreutils and sed)
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
