@@ -6,9 +6,11 @@ There are many like it, but this one is mine.
 
 Install Homebrew:
 
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
-This will automatically prompt you to install the Xcode Command Line Tools. Install these then go back to Terminal and resume the Homebrew installation.
+This will automatically install Xcode Command Line Tools.
 
 Make sure it’s working:
 
@@ -19,12 +21,10 @@ From the command-line, clone this project:
     mkdir -p ~/Projects
     git clone https://github.com/moubry/dotfiles.git ~/Projects/dotfiles
 
-Install system dependencies defined in the [Brewfile](https://github.com/moubry/dotfiles/blob/master/Brewfile):
+Sign into the Mac App Store with your Apple ID, then install system dependencies defined in the [Brewfile](https://github.com/moubry/dotfiles/blob/master/Brewfile) — this is going to take forever:
 
     cd ~/Projects/dotfiles
     brew bundle
-
-FYI: The Brewfile installs apps from the Mac App Store, so running this will probably open the Mac App Store and prompt you to log in with your Apple ID.
 
 Setup the dotfiles:
 
@@ -34,7 +34,7 @@ Setup the dotfiles:
 
 Check out the new apps you have installed:
 
-    find ~/Applications -cmin -60
+    find ~/Applications -cmin -120
 
 Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/master/dotfiles/bash/updaters):
 
@@ -45,6 +45,8 @@ Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/master/dot
 This command will close a bunch of your apps, including Terminal. So do this at the end:
 
     . ~/Projects/dotfiles/.osx
+
+This file was derrived from [Mathias Bynens’s `.macos` file](https://github.com/mathiasbynens/dotfiles/blob/main/.macos).
 
 Other things to remember that the `.osx` script doesn't handle for you:
 
