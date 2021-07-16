@@ -69,8 +69,10 @@ function eject() {
 }
 
 # Deploy a feature branch to an environment branch on a team that uses GitOps.
+# Usage: release add-linking production
 function release() {
   gl origin/$2 | head
+  kpods
   git push --force origin $1:$2
   gl origin/$2 | head
   bin/rio
@@ -81,9 +83,16 @@ alias kpods='kubectl get pods'
 alias ksecrets='kubectl get secrets'
 
 # Kube - Grab the first pod in the current namespace and shell into it.
+# Usage: kssh web
+alias kssh='kbash'
 function kbash() {
   container=$(kubectl get pods | sed '1d' | awk '{print $1}' | head -n 1)
   kubectl exec --stdin --tty $container -- /bin/bash
+}
+
+# Kube - Switch to a different namespace
+function kswitch() {
+  namespace=$1; kubectl config set-context --current --namespace=$namespace
 }
 
 # Kube - Print out the value of a secret.
