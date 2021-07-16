@@ -142,6 +142,19 @@ alias errorlog="tail /var/log/apache2/error_log"
 alias tailpg="tail -f /usr/local/var/log/postgres.log"
 alias logs="ls -lah /usr/local/var/log"
 
+function pginfo() {
+  brew services list
+  tail /usr/local/var/log/postgres.log
+}
+
+function pgkill() {
+  pginfo
+  pkill -f postgres
+  rm /usr/local/var/postgres/postmaster.pid
+  brew services list
+  pginfo
+}
+
 # Empty the trash
 alias emptytrash="rm -rfv ~/.Trash"
 
