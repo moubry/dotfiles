@@ -16,6 +16,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Automatically switch the version of Node depending on directly.
+cd() {
+  builtin cd "$@"
+  if [[ -f .node-version ]]; then
+    nvm use $(cat .node-version) > /dev/null
+  fi
+}
+
 # for ruby
 export RBENV="$HOME/.rbenv/bin"
 eval "$(rbenv init -)"
