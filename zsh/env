@@ -1,4 +1,4 @@
-export EDITOR=bbedit
+export EDITOR=vim
 
 # for homebrew
 export PATH=/usr/local/sbin:$PATH
