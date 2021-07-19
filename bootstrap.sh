@@ -20,6 +20,7 @@ touch ~/Projects/dotfiles/zsh/secrets
 
 # Sync preferences and packages for across machines
 ln -s ~/Dropbox/Apps/Atom ~/.atom
+ln -s ~/Dropbox/Apps/Code ~/.vscode
 
 # Finally, hook up the .zprofile to our cloned dotfiles
 ln -s ~/Projects/dotfiles ~/bin
