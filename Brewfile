@@ -100,6 +100,10 @@ cask 'tableplus'
 
 tap 'homebrew/cask-fonts'
 
+cask 'font-new-york'
 cask 'font-open-sans'
 cask 'font-roboto'
+cask 'font-sf-compact'
+cask 'font-sf-mono'
+cask 'font-sf-pro'
 cask 'font-source-code-pro'
