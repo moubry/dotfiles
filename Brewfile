@@ -67,6 +67,7 @@ mas 'Quip', id: 1003160018
 mas 'Sim Daltonism', id: 693112260
 mas 'Slack', id: 803453959
 mas 'Taurine', id: 960276676
+mas 'Trello', id: 1278508951
 mas 'Tweetbot 3', id: 1384080005
 mas 'Twitterrific', id: 1289378661
 
