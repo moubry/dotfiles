@@ -86,7 +86,9 @@ cask 'coderunner'
 cask 'dropbox'
 cask 'github'
 cask 'google-chrome'
+cask 'moom'
 cask 'sketch'
+cask 'tableplus'
 cask 'textexpander'
 cask 'textmate'
 cask 'toggl-track'
@@ -94,7 +96,6 @@ cask 'visual-studio-code'
 cask 'vmware-fusion'
 cask 'wireshark'
 cask 'xscope'
-cask 'tableplus'
 
 # Font Casks
 # https://github.com/caskroom/homebrew-fonts
