@@ -159,6 +159,10 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
+# Don't show those brackets around previously executed commands
+# https://superuser.com/a/975295/45045
+defaults write com.apple.Terminal AutoMarkPromptLines -int 0
+
 ###############################################################################
 # Address Book, Dashboard, iCal, TextEdit, and Disk Utility                   #
 ###############################################################################
