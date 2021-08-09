@@ -1,4 +1,5 @@
 export EDITOR=vim
+export LANG="en_US.UTF-8"
 
 # for homebrew
 export PATH=/usr/local/sbin:$PATH
@@ -47,6 +48,17 @@ export PATH=$HBASE_HOME:$PATH
 # for dotfiles
 export PATH=~/bin:$PATH
 
-PS1="\n\u:\w \$(vcprompt) \n$ "
+##########################
+# Setup the prompt for ZSH
+# https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt/
 
-# echo "Hostname: $HOSTNAME"
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats ' on %b'
+
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+PROMPT='${PWD/#$HOME/~}${vcs_info_msg_0_} $ '
