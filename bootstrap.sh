@@ -18,6 +18,11 @@ fi
 # Create an empty secrets file
 touch ~/Projects/dotfiles/zsh/secrets
 
+# Suppress login message of the day (MOTD) so that Terminal does not say
+# things like "Last login: Mon Aug 9 12:54:47 on ttys015" every time you
+# open a new window or tab (https://stackoverflow.com/a/20303502).
+touch ~/.hushlogin
+
 # Sync preferences and packages for across machines
 ln -s ~/Dropbox/Apps/Atom ~/.atom
 ln -s ~/Dropbox/Apps/Code ~/.vscode
