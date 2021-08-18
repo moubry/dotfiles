@@ -173,6 +173,13 @@ alias emptytrash="rm -rfv ~/.Trash"
 # Launch iPhone Simulator
 alias iphone='/usr/bin/open "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"'
 
+# Delete Xcode's DerivedData
+alias delete_derived_data='rm -rf ~/Library/Developer/Xcode/DerivedData'
+
+# Run Carthage for iOS
+alias cart='carthage bootstrap --use-xcframeworks --no-use-binaries --platform ios'
+alias cartup='carthage update --use-xcframeworks --no-use-binaries --platform ios'
+
 # Opens a man (manual page) in Preview (like a PDF)
 #   Written by https://github.com/tamalw
 function pman {
