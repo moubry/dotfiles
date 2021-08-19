@@ -59,6 +59,7 @@ brew 'zsh-completions'
 mas '1Password 7', id: 1333542190
 mas 'Apple Remote Desktop', id: 409907375
 mas 'Cascadea', id: 1432182561
+mas 'Kaleidoscope', id: 587512244
 mas 'Keynote', id: 409183694
 mas 'Neptunes', id: 1006739057
 mas 'Numbers', id: 409203825
