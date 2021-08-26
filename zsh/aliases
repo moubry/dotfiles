@@ -11,6 +11,7 @@ alias h=history
 # Open the dotfiles project (this project)
 alias dotfiles='cd ~/Projects/dotfiles; github; code .'
 alias secrets='vi ~/Projects/dotfiles/zsh/secrets'
+alias worklog='vi ~/worklog'
 
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
@@ -114,6 +115,11 @@ function kcreatesecret() {
 # https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/
 function kssh() {
   kubectl exec --stdin --tty $1 -- /bin/bash
+}
+
+# Find all text/pattern in every file in current directory hierarchy
+function fa() {
+  grep -rnw . -e $1
 }
 
 # recursively find file or directory
