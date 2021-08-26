@@ -49,6 +49,7 @@ brew 'ssh-copy-id'
 brew 'svn' # Dependency of homebrew-cask-fonts
 brew 'swiftlint'
 brew 'terminal-notifier'
+brew 'tmux'
 brew 'tree'
 brew 'wget'
 brew 'yamllint'
