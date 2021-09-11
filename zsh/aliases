@@ -12,6 +12,7 @@ alias h=history
 alias dotfiles='cd ~/Projects/dotfiles; github; code .'
 alias secrets='vi ~/Projects/dotfiles/zsh/secrets'
 alias worklog='vi ~/worklog'
+alias aliases='cat ~/Projects/dotfiles/zsh/aliases | grep alias'
 
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
@@ -180,12 +181,11 @@ alias emptytrash="rm -rfv ~/.Trash"
 # Launch iPhone Simulator
 alias iphone='/usr/bin/open "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"'
 
-# Delete Xcode's DerivedData
-alias delete_derived_data='rm -rf ~/Library/Developer/Xcode/DerivedData'
-
-# Run Carthage for iOS
+# Xcode development aliases
 alias cart='carthage bootstrap --use-xcframeworks --no-use-binaries --platform ios'
 alias cartup='carthage update --use-xcframeworks --no-use-binaries --platform ios'
+alias dderived='rm -rf ~/Library/Developer/Xcode/DerivedData'
+alias xcodereset='rm -rf Carthage; dderived; cart; xocde build'
 
 # Opens a man (manual page) in Preview (like a PDF)
 #   Written by https://github.com/tamalw
