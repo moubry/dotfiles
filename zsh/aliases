@@ -182,8 +182,8 @@ alias emptytrash="rm -rfv ~/.Trash"
 alias iphone='/usr/bin/open "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"'
 
 # Xcode development aliases
-alias cart='carthage bootstrap --use-xcframeworks --no-use-binaries --platform ios'
-alias cartup='carthage update --use-xcframeworks --no-use-binaries --platform ios'
+alias cart='carthage bootstrap --cache-builds --use-xcframeworks --no-use-binaries --platform ios'
+alias cartup='carthage update --cache-builds --use-xcframeworks --no-use-binaries --platform ios'
 alias dderived='rm -rf ~/Library/Developer/Xcode/DerivedData'
 alias xcodereset='rm -rf Carthage; dderived; cart; xcodebuild'
 
