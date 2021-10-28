@@ -185,7 +185,13 @@ alias iphone='/usr/bin/open "/Applications/Xcode.app/Contents/Developer/Applicat
 alias cart='carthage bootstrap --cache-builds --use-xcframeworks --no-use-binaries --platform ios'
 alias cartup='carthage update --cache-builds --use-xcframeworks --no-use-binaries --platform ios'
 alias dderived='rm -rf ~/Library/Developer/Xcode/DerivedData'
-alias xcodereset='rm -rf Carthage; dderived; cart; xcodebuild'
+
+function xcodereset {
+  rm -rf Carthage
+  rm -rf ~/Library/Developer/Xcode/DerivedData
+  rm -rf ~/Library/Caches/org.swift.swiftpm
+  carthage bootstrap --cache-builds --use-xcframeworks --no-use-binaries --platform ios
+}
 
 # Opens a man (manual page) in Preview (like a PDF)
 #   Written by https://github.com/tamalw
