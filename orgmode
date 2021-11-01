@@ -5,12 +5,9 @@ osascript '/Users/sean/Projects/dotfiles/clear-screen.AppleScript'
 
 # Open all my daily use Applications
 open '/Applications/1Password 7.app'
-open '/Applications/Agile.app'
-open '/Applications/Apple Directory.app'
 open '/Applications/Atom.app'
 open '/Applications/NepTunes.app'
 open '/Applications/Quip.app'
-open '/Applications/Radar.app'
 open '/Applications/Things3.app'
 open '/Applications/TogglDesktop.app'
 open '/System/Applications/Calendar.app'
