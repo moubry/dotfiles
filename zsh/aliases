@@ -9,10 +9,10 @@ alias lsd='ls -l | grep "^d"'
 alias h=history
 
 # Open the dotfiles project (this project)
-alias dotfiles='cd ~/Projects/dotfiles; github; code .'
-alias secrets='vi ~/Projects/dotfiles/zsh/secrets'
+alias dotfiles='cd ~/Developer/dotfiles; github; code .'
+alias secrets='vi ~/Developer/dotfiles/zsh/secrets'
 alias worklog='vi ~/worklog'
-alias aliases='cat ~/Projects/dotfiles/zsh/aliases | grep alias'
+alias aliases='cat ~/Developer/dotfiles/zsh/aliases | grep alias'
 
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
@@ -147,7 +147,7 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 # Usage:
 #     $ curltime "http://moubry.com"
 function curltime() {
-  curl -w "@/Users/sean/Projects/dotfiles/curl-format" -o /dev/null -s "$1"
+  curl -w "@/Users/sean/Developer/dotfiles/curl-format" -o /dev/null -s "$1"
 }
 
 # Open Chrome using all the known flags for turning off security, CORS, etc.

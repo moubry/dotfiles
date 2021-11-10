@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Hide all opens apps
-osascript '/Users/sean/Projects/dotfiles/clear-screen.AppleScript'
+osascript '/Users/sean/Developer/dotfiles/clear-screen.AppleScript'
 
 # Open all my daily use Applications
 open '/Applications/1Password 7.app'
@@ -17,4 +17,4 @@ open '/System/Applications/Music.app'
 open '/System/Applications/Safari.app'
 
 # Arrange the windows
-osascript '/Users/sean/Projects/dotfiles/orgmode.AppleScript'
+osascript '/Users/sean/Developer/dotfiles/orgmode.AppleScript'

@@ -16,7 +16,7 @@ if [ -d ~/.atom ]; then
 fi
 
 # Create an empty secrets file
-touch ~/Projects/dotfiles/zsh/secrets
+touch ~/Developer/dotfiles/zsh/secrets
 
 # Suppress login message of the day (MOTD) so that Terminal does not say
 # things like "Last login: Mon Aug 9 12:54:47 on ttys015" every time you
@@ -28,5 +28,5 @@ ln -s ~/Dropbox/Apps/Atom ~/.atom
 ln -s ~/Dropbox/Apps/Code ~/.vscode
 
 # Finally, hook up the .zprofile to our cloned dotfiles
-ln -s ~/Projects/dotfiles ~/bin
-echo 'source ~/Projects/dotfiles/zshrc' >> ~/.zprofile
+ln -s ~/Developer/dotfiles ~/bin
+echo 'source ~/Developer/dotfiles/zshrc' >> ~/.zprofile

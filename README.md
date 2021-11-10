@@ -18,17 +18,17 @@ Make sure it’s working:
 
 From the command-line, clone this project:
 
-    mkdir -p ~/Projects
-    git clone https://github.com/moubry/dotfiles.git ~/Projects/dotfiles
+    mkdir -p ~/Developer
+    git clone https://github.com/moubry/dotfiles.git ~/Developer/dotfiles
 
 Sign into the Mac App Store with your Apple ID, then install system dependencies defined in the [Brewfile](https://github.com/moubry/dotfiles/blob/master/Brewfile) — this is going to take forever:
 
-    cd ~/Projects/dotfiles
+    cd ~/Developer/dotfiles
     brew bundle
 
 Setup the dotfiles:
 
-    ~/Projects/dotfiles/bootstrap.sh
+    ~/Developer/dotfiles/bootstrap.sh
 
 ##### You’re done!
 
@@ -44,7 +44,7 @@ Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/master/dot
 
 This command will close a bunch of your apps, including Terminal. So do this at the end:
 
-    . ~/Projects/dotfiles/.osx
+    . ~/Developer/dotfiles/.osx
 
 This file was derrived from [Mathias Bynens’s `.macos` file](https://github.com/mathiasbynens/dotfiles/blob/main/.macos).
 
