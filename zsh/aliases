@@ -184,6 +184,9 @@ alias iphone='/usr/bin/open "/Applications/Xcode.app/Contents/Developer/Applicat
 # Xcode development aliases
 alias dderived='rm -rf ~/Library/Developer/Xcode/DerivedData'
 
+# Opens the first Xcode project file in the current directory in Xcode
+alias xcode='open *.xcodeproj'
+
 function xcodereset {
   rm -rf ~/Library/Developer/Xcode/DerivedData
   rm -rf ~/Library/Caches/org.swift.swiftpm
