@@ -61,7 +61,6 @@ brew 'zsh-completions'
 
 # Mac App Store
 
-mas '1Password 7', id: 1333542190
 mas 'Apple Remote Desktop', id: 409907375
 mas 'Cascadea', id: 1432182561
 mas 'Kaleidoscope', id: 587512244
@@ -74,8 +73,6 @@ mas 'Sim Daltonism', id: 693112260
 mas 'Slack', id: 803453959
 mas 'Taurine', id: 960276676
 mas 'Trello', id: 1278508951
-mas 'Tweetbot 3', id: 1384080005
-mas 'Twitterrific', id: 1289378661
 
 # Homebrew Cask
 # http://caskroom.io
@@ -83,9 +80,9 @@ mas 'Twitterrific', id: 1289378661
 # Read https://github.com/Homebrew/homebrew-cask/issues/58046 if you ever see:
 # Error: Cask 'wireshark' definition is invalid: invalid 'depends_on macos' value: ">= :mountain_lion"
 
+cask '1password'
 cask 'aerial'
 cask 'alfred'
-cask 'atom'
 cask 'bbedit'
 cask 'cheatsheet'
 cask 'chromedriver'

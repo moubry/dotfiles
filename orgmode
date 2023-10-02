@@ -3,13 +3,12 @@
 # Hide all opens apps
 osascript '/Users/sean/Developer/dotfiles/clear-screen.AppleScript'
 
-# Open all my daily use Applications
-open '/Applications/1Password 7.app'
-open '/Applications/Atom.app'
+# Open all my daily-use Applications
+open '/Applications/1Password.app'
 open '/Applications/NepTunes.app'
-open '/Applications/Quip.app'
-open '/Applications/Things3.app'
-open '/Applications/TogglDesktop.app'
+open '/Applications/Slack.app'
+open '/Applications/Toggl Track.app'
+open '/Applications/Visual Studio Code - Insiders.app'
 open '/System/Applications/Calendar.app'
 open '/System/Applications/Mail.app'
 open '/System/Applications/Messages.app'

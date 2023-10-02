@@ -7,14 +7,7 @@
 -- via https://www.lifewire.com/assign-mac-apps-to-open-in-specific-desktop-space-2260812
 --
 -- Desktop 1 (Comms Desktop)
---   • Messages
---   • Quip
---   • Slack
---
 -- Desktop 2 (Orgmode Desktop)
---   • Radar
---   • Agile
---   • TogglDesktop
 --
 -- These `go_to_comms_desktop` and `go_to_orgmode_desktop` functions assume you
 -- have turned on Control+N as a shortcut for Mission Control in System Preferences
@@ -44,6 +37,20 @@ on open_new_safari_window()
 	end tell
 	tell application "Safari" to activate
 end open_new_safari_window
+
+on open_references()
+	tell application "Finder"
+		-- Open my References folder in Dropbox
+		open folder "References" of folder "Dropbox" of folder "sean" of folder "Users" of startup disk
+
+		-- Wait a bit to ensure Finder is ready
+		delay 1
+
+		-- Hide the toolbar for the active Finder window (hopefully References)
+		-- This hides the sidebar too in macOS Sonoma
+		set toolbar visible of front Finder window to false
+	end tell
+end open_references
 
 -- `menu_click`, by Jacob Rus, September 2006
 --
@@ -81,41 +88,3 @@ on menu_click_recurse(mList, parentObject)
 		end if
 	end tell
 end menu_click_recurse
-
-go_to_orgmode_desktop()
-
-tell application "Atom"
-	open "/Users/sean/Box Sync/Organization"
-end tell
-
-open_new_safari_window()
-
-tell application "Radar" to activate
-
-delay 3 -- Give Radar time to log in
-
-menu_click({"Radar", "Window", "Viewer"})
-
-do shell script "open '/Users/sean/Box Sync/Organization/Worklog'"
-
-delay 2
-
-tell application "Moom"
-	arrange windows according to snapshot named "Orgmode"
-end tell
-
-delay 2
-
-go_to_comms_desktop()
-
-open_new_safari_window()
-
-delay 1
-
-tell application "Moom"
-	arrange windows according to snapshot named "Comms"
-end tell
-
-delay 2
-
-go_to_orgmode_desktop()
