@@ -217,3 +217,7 @@ function show_desktop() {
   defaults write com.apple.finder CreateDesktop true
   killall Finder
 }
+
+function hide_apps() {
+  osascript '/Users/sean/Developer/dotfiles/clear-screen.AppleScript'
+}
