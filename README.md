@@ -50,12 +50,8 @@ This file was derrived from [Mathias Bynens’s `.macos` file](https://github.co
 
 Other things to remember that the `.osx` script doesn't handle for you:
 
-* Terminal > Preferences > Profiles > Keyboard > Use Option as Meta key
-* Keychain Access > Preferences > Show keychain status in menu bar
-* Open DropBox and sign in > Choose folders to sync > Start unchecking everything except:
-  * 1Password
-  * Temp
-  * TextExpander
-* Wait until all Dropbox files are downloaded (this'll take about 10 minutes)
-* Start configuring all the software that requires licenses, getting the licenses from DropBox
-* Setup 1Password
+* Terminal > Preferences > Profiles > Keyboard > Use Option as Meta key.
+* Keychain Access > Preferences > Show keychain status in menu bar.
+* Open Dropbox and sign in > Choose folders to sync > Only the essentials.
+* Wait until all Dropbox files are downloaded (this'll take about 10 minutes).
+* Setup 1Password, then setup apps with licenses from 1Password.

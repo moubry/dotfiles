@@ -52,6 +52,18 @@ on open_references()
 	end tell
 end open_references
 
+on open_mail()
+	tell application "Mail"
+		-- Open Mail app
+		activate
+
+		-- Wait for the app to open
+		delay 1
+	end tell
+
+	menu_click({"Mail", "View", "Hide Sidebar"})
+end open_mail
+
 -- `menu_click`, by Jacob Rus, September 2006
 --
 -- Accepts a list of form: `{"Finder", "View", "Arrange By", "Date"}`
@@ -88,3 +100,5 @@ on menu_click_recurse(mList, parentObject)
 		end if
 	end tell
 end menu_click_recurse
+
+open_mail()
