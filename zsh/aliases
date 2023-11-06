@@ -154,12 +154,13 @@ alias memdump="memcached-tool localhost:11211 dump"
 # Tail logs
 alias accesslog="tail /var/log/apache2/access_log"
 alias errorlog="tail /var/log/apache2/error_log"
-alias tailpg="tail -f /usr/local/var/log/postgres.log"
+alias tailpg="tail -f $(brew --prefix)/var/log/postgres.log"
 alias logs="ls -lah /usr/local/var/log"
 
 function pginfo() {
   brew services list
-  tail /usr/local/var/log/postgres.log
+  tail $(brew --prefix)/var/log/postgres.log
+  tail $(brew --prefix)/var/log/postgresql@14.log
 }
 
 function pgkill() {

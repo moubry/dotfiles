@@ -18,24 +18,22 @@ function update() {
 function update_brew() {
   brew update # Run brew update twice because that's what Homebrew says to do:
   brew update # https://github.com/Homebrew/brew/blob/master/docs/README.md#troubleshooting
+  brew tap --repair
   brew cleanup
   brew doctor
-  brew cask doctor
   brew upgrade
-  brew cask upgrade
+  brew upgrade --cask
   brew cleanup
   brew doctor
 }
 
 function update_python() {
   echo 'Updating Python'
-
   pip install --upgrade pip
 }
 
 function update_nvm() {
   echo 'Updating NVM'
-
   (
     cd "$NVM_DIR"
     git fetch origin
