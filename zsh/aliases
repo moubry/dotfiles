@@ -8,6 +8,11 @@ alias lsd='ls -l | grep "^d"'
 # History
 alias h=history
 
+# Neovim
+alias vim=nvim
+alias vi=nvim
+alias v=nvim
+
 # Open the dotfiles project (this project)
 alias dotfiles='cd ~/Developer/dotfiles; github; code .'
 alias secrets='vi ~/Developer/dotfiles/zsh/secrets'
