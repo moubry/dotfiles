@@ -26,6 +26,9 @@ touch ~/.hushlogin
 # Sync preferences and packages for across machines
 ln -s ~/Dropbox/Apps/Code ~/.vscode
 
-# Finally, hook up the .zprofile to our cloned dotfiles
+# Create a symlink from ~/bin to ~/Developer/dotfiles, which puts the dotfiles
+# project's various scripts on the PATH so they can be run from anywhere.
 ln -s ~/Developer/dotfiles ~/bin
-echo 'source ~/Developer/dotfiles/zshrc' >> ~/.zprofile
+
+# Setup Zsh to use the dotfiles project's .zshrc file.
+echo 'source ~/Developer/dotfiles/zshrc' >> ~/.zshrc
