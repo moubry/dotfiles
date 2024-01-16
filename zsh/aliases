@@ -122,6 +122,26 @@ function kssh() {
   kubectl exec --stdin --tty $1 -- /bin/bash
 }
 
+# Kube - Tail logs from two pods at once (Earbuds API).
+function klogs() {
+  PODS=$(kubectl get pods | grep eb-api-deployment | awk '{print $1}' | head -2)
+  POD_ARRAY=(${=PODS})
+  POD1=${POD_ARRAY[1]}
+  POD2=${POD_ARRAY[2]}
+  if [[ -z "$POD1" ]] || [[ -z "$POD2" ]]; then
+    echo "Pods not found."
+    exit 1
+  fi
+  # Tail the logs from both the pods side-by-side using tmux.
+  # When you're finished with the logs, press Ctrl-b then `:kill-session`.
+  tmux new-session -d -s "klogs"
+  tmux set-hook -t "klogs" session-closed 'kill-pane -a'
+  tmux split-window -h
+  tmux send-keys -t 0 "kubectl logs -f $POD1 | grep -v 31061" C-m
+  tmux send-keys -t 1 "kubectl logs -f $POD2 | grep -v 31061" C-m
+  tmux attach-session -t "klogs"
+}
+
 # Find all text/pattern in every file in current directory hierarchy
 function fa() {
   grep -rnw . -e $1
