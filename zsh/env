@@ -10,6 +10,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
+# for compilers to find curl
+export LDFLAGS="-L/opt/homebrew/opt/curl/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
+
+# for pkg-config to find curl
+export PKG_CONFIG_PATH="/opt/homebrew/opt/curl/lib/pkgconfig"
+
 # for zoxide (fast directory jumping)
 eval "$(zoxide init zsh)"
 
