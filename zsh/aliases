@@ -194,9 +194,11 @@ function pginfo() {
 
 function pgkill() {
   pginfo
+  brew services stop postgresql
   pkill -f postgres
   rm /usr/local/var/postgres/postmaster.pid
-  brew services list
+  rm /opt/homebrew/var/postgres/postmaster.pid
+  brew services start postgresql
   pginfo
 }
 
