@@ -23,8 +23,33 @@ eval "$(zoxide init zsh)"
 # for node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Automatically switch the version of Node depending on directly.
+# Automatically switch the version of Node depending on `.nvmrc` existance.
+# https://github.com/nvm-sh/nvm?tab=readme-ov-file#zsh
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local nvmrc_path
+  nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version
+    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+# Automatically switch the version of Node depending on `.node-version`.
 cd() {
   builtin cd "$@"
   if [[ -f .node-version ]]; then
@@ -51,6 +76,33 @@ export PATH=$GOPATH/bin:$PATH
 # for hbase
 export HBASE_HOME=/usr/local/Cellar/hbase/1.2.6/libexec
 export PATH=$HBASE_HOME:$PATH
+
+add_to_path() {
+  export PATH="$1:$PATH"
+}
+
+# for android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+add_to_path $ANDROID_HOME/tools
+add_to_path $ANDROID_HOME/tools/bin
+add_to_path $ANDROID_HOME/platform-tools
+add_to_path $ANDROID_HOME/emulator
+add_to_path $ANDROID_HOME/cmdline-tools/latest/bin
+
+# for java (for android)
+# export JAVA_HOME=$(brew --prefix openjdk)
+# https://stackoverflow.com/a/64389804/369669
+# export STUDIO_JDK="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+# export JAVA_HOME=$STUDIO_JDK
+# export PATH=$JAVA_HOME/bin:$PATH
+
+# for dart and flutter
+export DART=$HOME/.pub-cache/bin
+export PATH=$DART:$PATH
+[[ -f ~/.dart-cli-completion/zsh-config.zsh ]] && . ~/.dart-cli-completion/zsh-config.zsh || true
+
+# export FLUTTER="$HOME/Developer/flutter/bin"
+# export PATH=$FLUTTER:$PATH
 
 # for dotfiles
 export PATH=~/bin:$PATH
