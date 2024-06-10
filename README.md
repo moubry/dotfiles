@@ -44,7 +44,7 @@ Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/master/dot
 
 This command will close a bunch of your apps, including Terminal. So do this at the end:
 
-    . ~/Developer/dotfiles/.osx
+    . ~/Developer/dotfiles/.macos
 
 This file was derrived from [Mathias Bynens’s `.macos` file](https://github.com/mathiasbynens/dotfiles/blob/main/.macos).
 
