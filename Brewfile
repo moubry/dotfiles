@@ -32,7 +32,6 @@ brew 'git'
 brew 'go'
 brew 'golangci-lint'
 brew 'graphviz'
-brew 'heroku'
 brew 'hugo'
 brew 'icu4c'
 brew 'jsonlint'
@@ -53,7 +52,6 @@ brew 'readline'
 brew 'redis'
 brew 'ruby-build'
 brew 'ssh-copy-id'
-brew 'svn' # Dependency of homebrew-cask-fonts
 brew 'swiftlint'
 brew 'terminal-notifier'
 brew 'tmux'
@@ -65,6 +63,7 @@ brew 'zsh-completions'
 
 # Mac App Store
 
+mas '1Password for Safari', id: 1569813296
 mas 'Apple Remote Desktop', id: 409907375
 mas 'Cascadea', id: 1432182561
 mas 'Kaleidoscope', id: 587512244
@@ -72,10 +71,10 @@ mas 'Keynote', id: 409183694
 mas 'Neptunes', id: 1006739057
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
-mas 'Quip', id: 1003160018
 mas 'Sim Daltonism', id: 693112260
 mas 'Slack', id: 803453959
 mas 'Taurine', id: 960276676
+mas 'Toggl Track', id: 1291898086
 mas 'Trello', id: 1278508951
 
 # Homebrew Cask
@@ -88,32 +87,24 @@ cask '1password'
 cask 'aerial'
 cask 'alfred'
 cask 'bbedit'
-cask 'cheatsheet'
 cask 'chromedriver'
 cask 'coderunner'
 cask 'docker'
-cask 'dropbox'
 cask 'github'
 cask 'google-chrome'
 cask 'moom'
 cask 'nova'
-cask 'paw'
 cask 'postman'
 cask 'proxyman'
+cask 'rapidapi'
 cask 'sketch'
 cask 'tableplus'
-cask 'textexpander'
-cask 'textmate'
-cask 'toggl-track'
 cask 'visual-studio-code'
 cask 'vmware-fusion'
 cask 'wireshark'
 cask 'xscope'
 
 # Font Casks
-# https://github.com/caskroom/homebrew-fonts
-
-tap 'homebrew/cask-fonts'
 
 cask 'font-new-york'
 cask 'font-open-sans'

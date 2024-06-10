@@ -48,10 +48,14 @@ This command will close a bunch of your apps, including Terminal. So do this at 
 
 This file was derrived from [Mathias Bynens’s `.macos` file](https://github.com/mathiasbynens/dotfiles/blob/main/.macos).
 
-Other things to remember that the `.osx` script doesn't handle for you:
+Other things to remember that the `.osx` script doesn’t handle for you:
 
 * Terminal > Preferences > Profiles > Keyboard > Use Option as Meta key.
-* Keychain Access > Preferences > Show keychain status in menu bar.
-* Open Dropbox and sign in > Choose folders to sync > Only the essentials.
-* Wait until all Dropbox files are downloaded (this'll take about 10 minutes).
-* Setup 1Password, then setup apps with licenses from 1Password.
+
+## Setup Apps
+
+* [Download and install Dropbox from their website](https://www.dropbox.com/desktop) instead of Homebrew because it’s a mess to setup these days with [kernel extensions](https://developer.apple.com/library/content/technotes/tn2459/_index.html) and/or File Provider. Once you’re signed in: Preferences > Sync Choose folders to selective sync > Only the essential folders (Apps and References). Wait until all Dropbox files are downloaded (this’ll take forever).
+
+* Log into 1Password to get software licenses.
+
+* GitHub Desktop > Install Command Line Tool
