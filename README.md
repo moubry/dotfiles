@@ -59,3 +59,5 @@ Other things to remember that the `.osx` script doesn’t handle for you:
 * Log into 1Password to get software licenses.
 
 * GitHub Desktop > Install Command Line Tool
+
+* Install NVM by [running their install script](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating). To avoid changes to `.zshrc`, either revert them after installation or run the script with `PROFILE=/dev/null`.
