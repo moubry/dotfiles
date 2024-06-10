@@ -64,6 +64,7 @@ brew 'zsh-completions'
 # Mac App Store
 
 mas '1Password for Safari', id: 1569813296
+mas 'Apple Developer', id: 640199958
 mas 'Apple Remote Desktop', id: 409907375
 mas 'Cascadea', id: 1432182561
 mas 'Kaleidoscope', id: 587512244
