@@ -1,3 +1,8 @@
+# Prepends a directory to the path.
+add_to_path() {
+  export PATH="$1:$PATH"
+}
+
 export EDITOR=nvim
 export LANG="en_US.UTF-8"
 
@@ -77,28 +82,20 @@ export PATH=$GOPATH/bin:$PATH
 export HBASE_HOME=/usr/local/Cellar/hbase/1.2.6/libexec
 export PATH=$HBASE_HOME:$PATH
 
-add_to_path() {
-  export PATH="$1:$PATH"
-}
-
 # for android
 export ANDROID_HOME=$HOME/Library/Android/sdk
+add_to_path $ANDROID_HOME/emulator
+add_to_path $ANDROID_HOME/platform-tools
 add_to_path $ANDROID_HOME/tools
 add_to_path $ANDROID_HOME/tools/bin
-add_to_path $ANDROID_HOME/platform-tools
-add_to_path $ANDROID_HOME/emulator
 add_to_path $ANDROID_HOME/cmdline-tools/latest/bin
 
 # for java (for android)
-# export JAVA_HOME=$(brew --prefix openjdk)
-# https://stackoverflow.com/a/64389804/369669
-# export STUDIO_JDK="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
-# export JAVA_HOME=$STUDIO_JDK
-# export PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME=$(brew --prefix openjdk)
+add_to_path $JAVA_HOME/bin
 
 # for dart and flutter
-export DART=$HOME/.pub-cache/bin
-export PATH=$DART:$PATH
+add_to_path $HOME/.pub-cache/bin
 [[ -f ~/.dart-cli-completion/zsh-config.zsh ]] && . ~/.dart-cli-completion/zsh-config.zsh || true
 
 # export FLUTTER="$HOME/Developer/flutter/bin"
