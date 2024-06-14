@@ -205,6 +205,23 @@ function pgkill() {
 # Empty the trash
 alias emptytrash="rm -rfv ~/.Trash"
 
+# Launch Android emulator
+function android {
+  # Get the list of available AVDs
+  avd_list=$($ANDROID_HOME/emulator/emulator -list-avds | grep -v INFO)
+
+  # Check if the list is not empty
+  if [[ -n "$avd_list" ]]; then
+    # Get the first AVD name
+    first_avd=$(echo "$avd_list" | head -n 1)
+
+    # Run the first AVD
+    $ANDROID_HOME/emulator/emulator -avd "$first_avd"
+  else
+    echo "No AVDs found. Please create one first."
+  fi
+}
+
 # Launch iPhone Simulator
 alias iphone='/usr/bin/open "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"'
 
