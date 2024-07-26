@@ -70,13 +70,25 @@ function new-git() {
   git config push.default current
 }
 
-# GTFO of whatever you're on
+# GTFO of whatever you’re working on
 function eject() {
+  # Get the name of the default branch (not always `main`)
+  DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+
+  # Remove untracked files and directories
   git clean -df
+
+   # Revert changes in tracked files to the last commit
   git checkout -- .
+
+  # Update local references to remote branches and remove references to deleted remote branches
   git fetch -ap
-  git checkout main
-  git reset --hard origin/main
+
+  # Switch to the default branch
+  git checkout $DEFAULT_BRANCH
+
+  # Force the local default branch to be exactly like the remote default branch
+  git reset --hard origin/$DEFAULT_BRANCH
 }
 
 # Deploy a feature branch to an environment branch on a team that uses GitOps.
