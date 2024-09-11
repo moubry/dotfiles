@@ -24,6 +24,17 @@ alias todo='open ~/Dropbox/References/Todo.txt'
 alias system='open ~/Dropbox/References/System.txt'
 alias worklog='open ~/Dropbox/References/Worklog.txt'
 
+# Tag this on to the end of commands check the exit code like this:
+#     $ npm audit; check_status
+check_status() {
+  local exit_code=$?
+  if [ $exit_code -eq 0 ]; then
+    echo -e "\e[32mCommand succeeded with an exit code of $exit_code.\e[0m"
+  else
+    echo -e "\e[31mCommand failed with an exit code of $exit_code.\e[0m"
+  fi
+}
+
 # Git
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gb='git branch'
