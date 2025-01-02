@@ -24,7 +24,7 @@ touch ~/Developer/dotfiles/zsh/secrets
 touch ~/.hushlogin
 
 # Sync preferences and packages for across machines
-ln -s ~/Dropbox/Apps/Code ~/.vscode
+ln -s ~/Library/CloudStorage/Dropbox/Apps/Code ~/.vscode
 
 # Create a symlink from ~/bin to ~/Developer/dotfiles, which puts the dotfiles
 # project's various scripts on the PATH so they can be run from anywhere.

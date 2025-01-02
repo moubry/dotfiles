@@ -19,10 +19,11 @@ alias secrets='vi ~/Developer/dotfiles/zsh/secrets'
 alias aliases='cat ~/Developer/dotfiles/zsh/aliases | grep alias'
 
 # Open personal process txt files
-alias references='open ~/Dropbox/References'
-alias todo='open ~/Dropbox/References/Todo.txt'
-alias system='open ~/Dropbox/References/System.txt'
-alias worklog='open ~/Dropbox/References/Worklog.txt'
+export DROPBOX_PATH=~/Library/CloudStorage/Dropbox
+alias references='open $DROPBOX_PATH/References'
+alias todo='open $DROPBOX_PATH/References/Todo.txt'
+alias system='open $DROPBOX_PATH/References/System.txt'
+alias worklog='open $DROPBOX_PATH/References/Worklog.txt'
 
 # Tag this on to the end of commands check the exit code like this:
 #     $ npm audit; check_status
