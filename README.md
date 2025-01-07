@@ -16,12 +16,19 @@ Make sure it’s working:
 
     brew doctor
 
-From the command-line, clone this project:
+[Generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), then [add it to your GitHub profile](https://github.com/settings/ssh/new):
+
+    ssh-keygen -t ed25519 -C "sean@moubry.com"
+    cat ~/.ssh/id_ed25519.pub | pbcopy
+
+Clone this project:
 
     mkdir -p ~/Developer
     git clone https://github.com/moubry/dotfiles.git ~/Developer/dotfiles
 
-Sign into the Mac App Store with your Apple ID, then install system dependencies defined in the [Brewfile](https://github.com/moubry/dotfiles/blob/master/Brewfile) — this is going to take forever:
+Sign into the Mac App Store with your Apple ID, so Homebrew can install macOS apps.
+
+Install system dependencies defined in the [Brewfile](https://github.com/moubry/dotfiles/blob/master/Brewfile) — this is going to take forever:
 
     cd ~/Developer/dotfiles
     brew bundle
@@ -34,7 +41,7 @@ Setup the dotfiles:
 
 Check out the new apps you have installed:
 
-    find ~/Applications -cmin -120
+    find /Applications -type d -name '*.app' -cmin -120
 
 Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/master/dotfiles/bash/updaters):
 
@@ -46,11 +53,11 @@ This command will close a bunch of your apps, including Terminal. So do this at 
 
     . ~/Developer/dotfiles/.macos
 
-This file was derrived from [Mathias Bynens’s `.macos` file](https://github.com/mathiasbynens/dotfiles/blob/main/.macos).
+This file was derived from [Mathias Bynens’s `.macos` file](https://github.com/mathiasbynens/dotfiles/blob/main/.macos).
 
-Other things to remember that the `.osx` script doesn’t handle for you:
+Other things to remember that the `.macos` script doesn’t handle for you:
 
-* Terminal > Preferences > Profiles > Keyboard > Use Option as Meta key.
+* Terminal > Settings > Profiles > Keyboard > Use Option as Meta key.
 
 ## Setup Apps
 
@@ -58,6 +65,6 @@ Other things to remember that the `.osx` script doesn’t handle for you:
 
 * Log into 1Password to get software licenses.
 
-* GitHub Desktop > Install Command Line Tool
+* Open GitHub Desktop then run Install Command Line Tool from the menu to get the `github` command-line tool.
 
 * Install NVM by [running their install script](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating). To avoid changes to `.zshrc`, either revert them after installation or run the script with `PROFILE=/dev/null`.
