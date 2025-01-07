@@ -91,7 +91,7 @@ add_to_path $ANDROID_HOME/tools/bin
 add_to_path $ANDROID_HOME/cmdline-tools/latest/bin
 
 # for java (for android)
-export JAVA_HOME=$(brew --prefix openjdk)
+export JAVA_HOME=$(brew --prefix openjdk@17)
 add_to_path $JAVA_HOME/bin
 
 # for dart and flutter
