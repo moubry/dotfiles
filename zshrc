@@ -1,8 +1,9 @@
-# This zshrc file is intended to be run on ever new terminal session, and
+# This zshrc file is intended to be run on every new session, and
 # assumes you have already run `bootstrap.sh` which symlinks the
-# dotfiles project to ~/bin, and symlinks this file to ~/.zshrc.
+# dotfiles project to ~/bin, and sources this file from ~/.zshrc.
 #
-# FYI: https://superuser.com/a/892248/45045
+# FYI on the differences between .profile, .zprofile, and .zshrc:
+# https://superuser.com/a/892248/45045
 
 . ~/bin/zsh/env
 . ~/bin/zsh/config
