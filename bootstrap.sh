@@ -30,5 +30,7 @@ ln -s ~/Library/CloudStorage/Dropbox/Apps/Code ~/.vscode
 # project's various scripts on the PATH so they can be run from anywhere.
 ln -s ~/Developer/dotfiles ~/bin
 
-# Setup Zsh to use the dotfiles project's .zshrc file.
-echo 'source ~/Developer/dotfiles/zshrc' >> ~/.zshrc
+# Setup Zsh to use the dotfiles project’s .zshrc file.
+# This intentionally overwrites the entire file (instead of appending) because
+# everything related to configuring zsh should be inside the dotfiles project.
+echo 'source ~/Developer/dotfiles/zshrc' > ~/.zshrc
