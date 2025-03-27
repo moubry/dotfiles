@@ -85,6 +85,12 @@ function new-git() {
 
 # GTFO of whatever you’re working on
 function eject() {
+  # Exit early if not in a Git repository
+  if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+    echo "Error: No Git repository found."
+    return 1
+  fi
+
   # Get the name of the default branch (not always `main`)
   DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
 
