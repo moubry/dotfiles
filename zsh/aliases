@@ -83,14 +83,8 @@ function new-git() {
   git config push.default current
 }
 
-# GTFO of whatever you’re working on
+# GTFO of whatever you’re working on.
 function eject() {
-  # Exit early if not in a Git repository
-  if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-    echo "Error: No Git repository found."
-    return 1
-  fi
-
   # Get the name of the default branch (not always `main`)
   DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
 
@@ -108,6 +102,18 @@ function eject() {
 
   # Force the local default branch to be exactly like the remote default branch
   git reset --hard origin/$DEFAULT_BRANCH
+}
+
+# Rebase the current branch on top of the default branch.
+function rebase() {
+  # Get the name of the default branch (not always `main`)
+  DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+
+  git fetch origin
+  git add .
+  git stash push -u -m "Auto-stash before rebase"
+  git rebase origin/$DEFAULT_BRANCH
+  git stash pop
 }
 
 # Deploy a feature branch to an environment branch on a team that uses GitOps.
