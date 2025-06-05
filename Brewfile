@@ -109,6 +109,7 @@ cask 'xscope'
 
 # Font Casks
 
+cask 'font-jetbrains-mono'
 cask 'font-new-york'
 cask 'font-open-sans'
 cask 'font-roboto'
