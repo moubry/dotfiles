@@ -103,8 +103,6 @@ cask 'rapidapi'
 cask 'sketch'
 cask 'tableplus'
 cask 'visual-studio-code'
-cask 'vmware-fusion'
-cask 'wireshark'
 cask 'xscope'
 
 # Font Casks
