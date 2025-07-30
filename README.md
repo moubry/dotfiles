@@ -67,4 +67,4 @@ Other things to remember that the `.macos` script doesn’t handle for you:
 
 * Open GitHub Desktop then run Install Command Line Tool from the menu to get the `github` command-line tool.
 
-* Install NVM by [running their install script](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating). To avoid changes to `.zshrc`, either revert them after installation or run the script with `PROFILE=/dev/null`.
+* Install NVM by [running their install script](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating). This will modify your `.zshrc`, which you don’t want because NVM is setup in the dotfiles already, so revert these changes after install.
