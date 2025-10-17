@@ -1,0 +1,97 @@
+#!/bin/bash
+
+# Markdown → standalone HTML (GitHub look, Apple system font, no JS). Opens result.
+# Deps: pandoc (brew install pandoc). CSS vendored in dotfiles: ~/.dotfiles/assets/github-markdown.css
+
+# --- Args ---------------------------------------------------------------------
+if [ -z "${1:-}" ]; then
+  echo "usage: rendermd <file.md> [dest_dir_or_html]"; exit 2
+fi
+SRC="$1"; OUT="${2:-}"
+
+# --- Checks -------------------------------------------------------------------
+if ! command -v pandoc >/dev/null 2>&1; then
+  echo "error: pandoc not installed (brew install pandoc)"; exit 4
+fi
+if [ ! -f "$SRC" ]; then
+  echo "error: source not found: $SRC"; exit 3
+fi
+
+# --- Paths --------------------------------------------------------------------
+SRC_DIR="$(cd "$(dirname "$SRC")" && pwd)"
+SRC_BASE="$(basename "${SRC%.*}")"
+SRC_ABS="${SRC_DIR}/$(basename "$SRC")"
+
+CSS="${HOME}/.dotfiles/assets/github-markdown.css"
+if [ ! -f "$CSS" ]; then
+  echo "Fetching GitHub Markdown CSS into dotfiles..."
+  mkdir -p "$(dirname "$CSS")"
+  curl -fsSL https://raw.githubusercontent.com/sindresorhus/github-markdown-css/main/github-markdown.css -o "$CSS" || {
+    echo "error: failed to download CSS"; exit 5; }
+fi
+
+# --- Destination logic --------------------------------------------------------
+if [[ "$OUT" == *.html ]]; then
+  DEST="$OUT"
+elif [ -n "$OUT" ]; then
+  # Treat as directory (create if needed).
+  mkdir -p "$OUT"
+  DEST="${OUT%/}/$SRC_BASE.html"
+else
+  DEST="$SRC_DIR/$SRC_BASE.html"
+fi
+mkdir -p "$(dirname "$DEST")"
+
+# --- Temporary wrappers -------------------------------------------------------
+TMPDIR="$(mktemp -d)"; trap 'rm -rf "$TMPDIR"' EXIT
+printf '<article class="markdown-body">' > "$TMPDIR/pre.html"
+printf '</article>' > "$TMPDIR/post.html"
+
+# Custom CSS for dark mode fix and centered layout
+cat > "$TMPDIR/custom.css" << 'EOF'
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0d1117;
+  }
+}
+
+.markdown-body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+    padding: 20px;
+  }
+  body {
+    padding: 0;
+  }
+}
+EOF
+
+# --- Render -------------------------------------------------------------------
+pandoc "$SRC_ABS" \
+  --from=gfm+smart \
+  --to=html5 \
+  --standalone \
+  --embed-resources \
+  --include-before-body="$TMPDIR/pre.html" \
+  --include-after-body="$TMPDIR/post.html" \
+  --css="$CSS" \
+  --css="$TMPDIR/custom.css" \
+  --syntax-highlighting=pygments \
+  -o "$DEST" || { echo "error: pandoc failed"; exit 6; }
+
+# --- Report + open ------------------------------------------------------------
+DEST_ABS="$(cd "$(dirname "$DEST")" && pwd)/$(basename "$DEST")"
+echo "Rendered → $DEST_ABS"
+if command -v open >/dev/null 2>&1; then open "$DEST_ABS"; fi
