@@ -78,6 +78,9 @@ mkdir -p $HOME/go/bin
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
+# for rust
+add_to_path $HOME/.cargo/bin
+
 # for hbase
 export HBASE_HOME=/usr/local/Cellar/hbase/1.2.6/libexec
 export PATH=$HBASE_HOME:$PATH
