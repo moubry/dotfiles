@@ -34,3 +34,7 @@ ln -s ~/Developer/dotfiles ~/bin
 # This intentionally overwrites the entire file (instead of appending) because
 # everything related to configuring zsh should be inside the dotfiles project.
 echo 'source ~/Developer/dotfiles/zshrc' > ~/.zshrc
+
+# Setup Claude Code skills
+mkdir -p ~/.claude
+ln -s ~/Developer/dotfiles/skills ~/.claude/skills
