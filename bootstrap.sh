@@ -38,3 +38,7 @@ echo 'source ~/Developer/dotfiles/zshrc' > ~/.zshrc
 # Setup Claude Code skills
 mkdir -p ~/.claude
 ln -s ~/Developer/dotfiles/skills ~/.claude/skills
+
+# Setup Ghostty terminal config
+mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
+ln -s ~/Developer/dotfiles/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
