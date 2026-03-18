@@ -13,7 +13,8 @@ Create a git commit following these rules exactly:
 
 ## Description Rules
 - Use verbose, Markdown-formatted descriptions including any relevant info for future reference (complete error messages, links to issues, references to related commits, alternative approaches discarded, etc.)
-- Avoid hard wrapping lines, prefer line wrapping
+- Avoid hard wrapping lines, prefer soft line wrapping, because it makes the copy more portable (easy to copy/paste elsewhere without having to remove a bunch of line breaks)
+- Clearly state the problem, the solution, design decisions (explain why), etc. Anticipate the questions people will ask when they look at this commit again in the future
 - Do not credit AI assistants or their vendors as co-authors
 
 ## Process

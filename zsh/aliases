@@ -282,6 +282,9 @@ function pman {
   man -t "${1}" | open -f -a /Applications/Preview.app/
 }
 
+# Print a visual column ruler (80 chars wide)
+alias cols='echo "" && printf "#%.0s" {1..80} && echo ""'
+
 # Output the directories in the path on new lines
 alias path='echo $PATH | tr ":" "\n"'
 

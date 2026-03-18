@@ -78,6 +78,9 @@ mkdir -p $HOME/go/bin
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
+# for LaTeX (basictex)
+add_to_path /Library/TeX/texbin
+
 # for rust
 add_to_path $HOME/.cargo/bin
 
