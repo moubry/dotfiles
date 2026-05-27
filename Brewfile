@@ -22,6 +22,7 @@ mas 'Xcode', id: 497799835
 
 brew 'act'
 brew 'awscli'
+brew 'bun'
 brew 'cloc'
 brew 'cmake'
 brew 'curl'

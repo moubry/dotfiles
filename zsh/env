@@ -107,6 +107,11 @@ add_to_path $HOME/.pub-cache/bin
 # export FLUTTER="$HOME/Developer/flutter/bin"
 # export PATH=$FLUTTER:$PATH
 
+# for bun
+export BUN_INSTALL="$HOME/.bun"
+add_to_path $BUN_INSTALL/bin
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+
 # for the imsg CLI tool for sending iMessage from bots
 add_to_path $HOME/Developer/imsg/bin
 
