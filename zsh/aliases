@@ -9,7 +9,7 @@ alias lsd='ls -l | grep "^d"'
 alias h=history
 
 # Claude Code
-alias c='claude --model opus-4-7 --dangerously-skip-permissions'
+alias c='claude --model opus-4-8 --dangerously-skip-permissions'
 
 # Neovim
 alias vim=nvim
