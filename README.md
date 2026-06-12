@@ -28,7 +28,7 @@ Clone this project:
 
 Sign into the Mac App Store with your Apple ID, so Homebrew can install macOS apps.
 
-Install system dependencies defined in the [Brewfile](https://github.com/moubry/dotfiles/blob/master/Brewfile) — this is going to take forever:
+Install system dependencies defined in the [Brewfile](https://github.com/moubry/dotfiles/blob/main/Brewfile) — this is going to take forever:
 
     cd ~/Developer/dotfiles
     brew bundle
@@ -43,7 +43,7 @@ Check out the new apps you have installed:
 
     find /Applications -type d -name '*.app' -cmin -120
 
-Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/master/dotfiles/bash/updaters):
+Try [one of the cool aliases](https://github.com/moubry/dotfiles/blob/main/zsh/updaters):
 
     update
 

@@ -7,13 +7,13 @@ export EDITOR=nvim
 export LANG="en_US.UTF-8"
 
 # for homebrew
-export PATH=/usr/local/sbin:$PATH
+export PATH=/opt/homebrew/sbin:$PATH
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # for GNU versions of tools (coreutils and sed)
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # for compilers to find curl
 export LDFLAGS="-L/opt/homebrew/opt/curl/lib"
@@ -30,12 +30,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Automatically switch the version of Node depending on `.nvmrc` existance.
+# Automatically switch the version of Node depending on the directory.
+# Prefers `.nvmrc`, falling back to `.node-version`. This single chpwd hook
+# replaces a separate `cd()` override that also switched on `.node-version`;
+# the two fired together and double-switched, so they were consolidated here.
 # https://github.com/nvm-sh/nvm?tab=readme-ov-file#zsh
 autoload -U add-zsh-hook
 load-nvmrc() {
   local nvmrc_path
   nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -z "$nvmrc_path" ] && [ -f .node-version ]; then
+    nvmrc_path="$PWD/.node-version"
+  fi
 
   if [ -n "$nvmrc_path" ]; then
     local nvmrc_node_version
@@ -46,21 +53,13 @@ load-nvmrc() {
     elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
       nvm use
     fi
-  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+  elif [ "$(nvm version)" != "$(nvm version default)" ]; then
     echo "Reverting to nvm default version"
     nvm use default
   fi
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-
-# Automatically switch the version of Node depending on `.node-version`.
-cd() {
-  builtin cd "$@"
-  if [[ -f .node-version ]]; then
-    nvm use $(cat .node-version) > /dev/null
-  fi
-}
 
 # for ruby
 export RBENV="$HOME/.rbenv/bin"
@@ -83,10 +82,6 @@ add_to_path /Library/TeX/texbin
 
 # for rust
 add_to_path $HOME/.cargo/bin
-
-# for hbase
-export HBASE_HOME=/usr/local/Cellar/hbase/1.2.6/libexec
-export PATH=$HBASE_HOME:$PATH
 
 # for android
 export ANDROID_HOME=$HOME/Library/Android/sdk

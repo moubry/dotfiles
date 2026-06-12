@@ -20,6 +20,5 @@
 # Project ignores
 # ---------------
 
-dotfiles/bash/secrets
 secrets
 Brewfile.lock.json

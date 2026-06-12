@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 
-# First, verify assumptions about current state of the system are true. This
-# script should not run on a system that has already been bootstrapped. However,
-# if you're switching to these dotfiles after having already installed VS Code,
-# then bootstrapping is a destructive action, so handle this manually.
+# First, verify assumptions about current state of the system are true. The
+# symlinks below use `ln -sfn`, so re-running this script over a prior bootstrap
+# is safe. What is NOT safe is bootstrapping a system that already has a real
+# ~/bin or ~/.vscode directory (e.g. you installed VS Code before switching to
+# these dotfiles), because that content would be shadowed by a symlink. Bail in
+# that case so it can be handled manually; tolerate paths that are already our
+# own symlinks so re-runs work.
 
-if [ -d ~/bin ]; then
-  echo "ERROR: ~/bin already exists, so you’ll need to delete it, then re-run."
+if [ -e ~/bin ] && [ ! -L ~/bin ]; then
+  echo "ERROR: ~/bin already exists and is not a symlink, so you’ll need to delete it, then re-run."
   exit 1
 fi
 
-if [ -d ~/.vscode ]; then
-  echo "ERROR: ~/.vscode already exists, so you’ll need to delete it, then re-run."
+if [ -e ~/.vscode ] && [ ! -L ~/.vscode ]; then
+  echo "ERROR: ~/.vscode already exists and is not a symlink, so you’ll need to delete it, then re-run."
   exit 1
 fi
 
@@ -24,11 +27,11 @@ touch ~/Developer/dotfiles/zsh/secrets
 touch ~/.hushlogin
 
 # Sync preferences and packages for across machines
-ln -s ~/Library/CloudStorage/Dropbox/Apps/Code ~/.vscode
+ln -sfn ~/Library/CloudStorage/Dropbox/Apps/Code ~/.vscode
 
 # Create a symlink from ~/bin to ~/Developer/dotfiles, which puts the dotfiles
 # project's various scripts on the PATH so they can be run from anywhere.
-ln -s ~/Developer/dotfiles ~/bin
+ln -sfn ~/Developer/dotfiles ~/bin
 
 # Setup Zsh to use the dotfiles project’s .zshrc file.
 # This intentionally overwrites the entire file (instead of appending) because
@@ -37,8 +40,8 @@ echo 'source ~/Developer/dotfiles/zshrc' > ~/.zshrc
 
 # Setup Claude Code skills
 mkdir -p ~/.claude
-ln -s ~/Developer/dotfiles/skills ~/.claude/skills
+ln -sfn ~/Developer/dotfiles/skills ~/.claude/skills
 
 # Setup Ghostty terminal config
 mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
-ln -s ~/Developer/dotfiles/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
+ln -sfn ~/Developer/dotfiles/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
