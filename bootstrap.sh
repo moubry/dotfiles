@@ -38,10 +38,6 @@ ln -sfn ~/Developer/dotfiles ~/bin
 # everything related to configuring zsh should be inside the dotfiles project.
 echo 'source ~/Developer/dotfiles/zshrc' > ~/.zshrc
 
-# Setup Claude Code skills
-mkdir -p ~/.claude
-ln -sfn ~/Developer/dotfiles/skills ~/.claude/skills
-
 # Setup Ghostty terminal config
 mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
 ln -sfn ~/Developer/dotfiles/ghostty-config ~/Library/Application\ Support/com.mitchellh.ghostty/config
