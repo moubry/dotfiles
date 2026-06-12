@@ -110,6 +110,9 @@ add_to_path $BUN_INSTALL/bin
 # for the imsg CLI tool for sending iMessage from bots
 add_to_path $HOME/Developer/imsg/bin
 
+# for dvx (the latest `just build` lands in this dir)
+add_to_path $HOME/Developer/dvx/bin
+
 # for dotfiles
 export PATH=~/bin:$PATH
 
