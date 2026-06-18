@@ -11,10 +11,6 @@ export PATH=/opt/homebrew/sbin:$PATH
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# for GNU versions of tools (coreutils and sed)
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-
 # for compilers to find curl
 export LDFLAGS="-L/opt/homebrew/opt/curl/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
